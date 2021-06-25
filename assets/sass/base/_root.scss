@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+:root {
+    @each $group, $value in $och-font-sizes {
+        @each $name, $size in $value {
+            @if #{$group} == '' {
+                --och-font-size-#{$name}: #{$size};
+            } @else {
+                --och-font-size-#{$group}-#{$name}: #{$size};
+            }
+        }
+    }
+}

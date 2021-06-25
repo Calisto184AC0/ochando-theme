@@ -1,0 +1,49 @@
+// ---- TIPO DE FUENTE ----
+
+$och-fonts: ( // font family, weight, normal o italic, ubi de la fuente
+    ('Open Sans', 300, normal, 'OpenSans/OpenSans-Light.ttf'),
+    ('Open Sans', 300, italic, 'OpenSans/OpenSans-LightItalic.ttf'),
+    ('Open Sans', 400, normal, 'OpenSans/OpenSans-Regular.ttf'),
+    ('Open Sans', 400, italic, 'OpenSans/OpenSans-Italic.ttf'),
+    ('Open Sans', 600, normal, 'OpenSans/OpenSans-SemiBold.ttf'),
+    ('Open Sans', 600, italic, 'OpenSans/OpenSans-SemiBoldItalic.ttf'),
+    ('Open Sans', 700, normal, 'OpenSans/OpenSans-Bold.ttf'),
+    ('Open Sans', 700, italic, 'OpenSans/OpenSans-BoldItalic.ttf'),
+    ('Open Sans', 800, normal, 'OpenSans/OpenSans-ExtraBold.ttf'),
+    ('Open Sans', 800, italic, 'OpenSans/OpenSans-ExtraBoldItalic.ttf'),
+
+    ('Open Sans Condensed', 300, normal, 'OpenSansCondensed/OpenSansCondensed-Light.ttf'),
+    ('Open Sans Condensed', 300, italic, 'OpenSansCondensed/OpenSansCondensed-LightItalic.ttf'),
+    ('Open Sans Condensed', 700, normal, 'OpenSansCondensed/OpenSansCondensed-Bold.ttf'),
+
+    ('Libre Baskerville', 400, normal, 'LibreBaskerville/LibreBaskerville-Regular.ttf'),
+    ('Libre Baskerville', 400, italic, 'LibreBaskerville/LibreBaskerville-Italic.ttf'),
+    ('Libre Baskerville', 700, normal, 'LibreBaskerville/LibreBaskerville-Bold.ttf'),
+);
+
+// ---- TAMAÑO DE FUENTE ----
+
+$och-font-sizes: (
+    '': (
+        title: 2.5rem,
+        section-title: 2rem,
+        description: .9375rem
+    ),
+    card: (
+        title: 1.5rem,
+        description: .9375rem
+    ),
+    list: (
+        title: 1.75rem,
+        enum: 3rem,
+        description: 1.125rem
+    ),
+    form: (
+        title: 1rem,
+        description: .875rem
+    ),
+    header: (
+        title: 1.875rem,
+        nav: 1.5rem
+    )
+)

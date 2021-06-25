@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+@each $f-family, $f-weight, $f-style, $f-ubi in $och-fonts {
+    @font-face {
+        font-family: "#{$f-family}";
+        src:
+            local("#{$f-family}"),
+            url("#{'../fonts/' + $f-ubi}") format("truetype");
+        font-weight: #{$f-weight};
+        font-style: #{$f-style};
+    }
+}

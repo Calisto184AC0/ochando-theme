@@ -21,29 +21,74 @@ $och-fonts: ( // font family, weight, normal o italic, ubi de la fuente
     ('Libre Baskerville', 700, normal, 'LibreBaskerville/LibreBaskerville-Bold.ttf'),
 );
 
-// ---- TAMAÑO DE FUENTE ----
+$och-letter-spacing: -0.025rem;
 
-$och-font-sizes: (
+$och-typo: (
     '': (
-        title: 2.5rem,
-        section-title: 2rem,
-        description: .9375rem
+        title: (
+            font-size: (2.5rem, 5rem),
+            line-height: (48px, 90px)
+        ),
+        section-title: (
+            font-size: (2rem, 3rem),
+            line-height: (46px, 60px)
+        ),
+        description: (
+            font-size: (.9375rem, 1.3125rem),
+            line-height: (24px, 34px)
+        ),
+        link: (
+            font-size: (.9375rem, 1.0625rem),
+            line-height: (24px, 27px)
+        )
     ),
     card: (
-        title: 1.5rem,
-        description: .9375rem
+        title: (
+            font-size: (1.5rem, 2rem),
+            line-height: (36px, 46px)
+        ),
+        description: (
+            font-size: (.9375rem, 1.0625rem),
+            line-height: (24px, 27px)
+        )
     ),
     list: (
-        title: 1.75rem,
-        enum: 3rem,
-        description: 1.125rem
+        title: (
+            font-size: (1.75rem, 1.75rem),
+            line-height: (36px, 36px)
+        ),
+        enum: (
+            font-size: (3rem, 3rem),
+            line-height: (36px, 36px)
+        ),
+        description: (
+            font-size: (1.125rem, 1.125rem),
+            line-height: (28rem, 28px)
+        )
     ),
     form: (
-        title: 1rem,
-        description: .875rem
+        title: (
+            font-size: (1rem, 1.5rem),
+            line-height: (25px, 36px)
+        ),
+        description: (
+            font-size: (.875rem, .9375rem),
+            line-height: (19px, 21px)
+        )
     ),
     header: (
-        title: 1.875rem,
-        nav: 1.5rem
+        title: (
+            font-size: (1.875rem, 1.875rem),
+            line-height: (36px, 36px),
+            font-family: "Open Sans Condensed",
+            font-weight: 700,
+            letter-spacing: $och-letter-spacing
+        ),
+        menu: (
+            font-size: (1.5rem, 1.5rem),
+            line-height: (36px, 46px),
+            font-family: "Libre Baskerville",
+            letter-spacing: $och-letter-spacing
+        )
     )
-)
+);

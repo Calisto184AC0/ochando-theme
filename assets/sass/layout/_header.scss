@@ -1,0 +1,77 @@
+@use '../abstracts' as *;
+
+.och-header {
+    padding-top: 2.75rem;
+    margin: 0 var(--och-lateral-margin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .och-header-title { color: var(--och-black); }
+
+    .och-header-menu-icon {
+        position: relative;
+        z-index: 3;
+    }
+
+    .och-nav {
+        padding: 0 var(--och-lateral-margin);
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: ". menu menu menu";
+        column-gap: var(--och-column-gap);
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+
+        transform: translateX(100%);
+        transition: transform ease-in-out .3s;
+
+        .och-header-menu {
+            grid-area: menu;
+
+            padding-top: 9.375rem;
+
+            display: flex;
+            flex-direction: column;
+
+            position: relative;
+            z-index: 2;
+
+            * {
+                padding-bottom: 1.25rem;
+                color: var(--och-black);
+            }
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: var(--och-lateral-margin);
+            bottom: 0;
+            z-index: 1;
+
+            background-color: var(--och-red);
+        }
+    }
+}
+
+@include desktop {
+    .och-header .och-nav {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: ". . . . . . . . . . menu menu";
+
+        &::after {
+            width: 33rem;
+            left: auto;
+        }
+    }
+}

@@ -1,13 +1,18 @@
 @use '../abstracts' as *;
 
 :root {
-    @each $group, $value in $och-font-sizes {
-        @each $name, $size in $value {
-            @if #{$group} == '' {
-                --och-font-size-#{$name}: #{$size};
-            } @else {
-                --och-font-size-#{$group}-#{$name}: #{$size};
-            }
-        }
+    // Colores
+    @each $key, $value in $och-colors {
+        --och-#{$key}: #{$value};
+    }
+
+    // Más variables
+    --och-lateral-margin: #{$och-lateral-margin};
+    --och-column-gap: #{$och-column-gap};
+}
+
+@include desktop {
+    :root {
+        --och-lateral-margin: #{$och-lateral-margin-desktop};
     }
 }

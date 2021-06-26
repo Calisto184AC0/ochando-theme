@@ -10,3 +10,49 @@
         font-style: #{$f-style};
     }
 }
+
+@each $group, $values in $och-typo {
+    @each $name, $styles in $values {
+        @if #{$group} == '' {
+            .och-#{$name} {
+                @each $property, $lists in $styles {
+                    #{$property}: #{nth($lists, 1)};
+                }
+            }
+        } @else {
+            .och-#{$group}-#{$name} {
+                @each $property, $lists in $styles {
+                    #{$property}: #{nth($lists, 1)};
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    @each $group, $values in $och-typo {
+        @each $name, $styles in $values {
+            @if #{$group} == '' {
+                .och-#{$name} {
+                    @each $property, $lists in $styles {
+                        @if length($lists) > 1 {
+                            #{$property}: #{nth($lists, 2)};
+                        } @else {
+                            #{$property}: #{$lists};
+                        }
+                    }
+                }
+            } @else {
+                .och-#{$group}-#{$name} {
+                    @each $property, $lists in $styles {
+                        @if length($lists) > 1 {
+                            #{$property}: #{nth($lists, 2)};
+                        } @else {
+                            #{$property}: #{$lists};
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

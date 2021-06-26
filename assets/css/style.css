@@ -7,6 +7,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: "Open Sans";
+  overflow-x: hidden;
 }
 
 body,
@@ -50,20 +51,23 @@ input, button, textarea, select {
 }
 
 :root {
-  --och-font-size-title: 2.5rem;
-  --och-font-size-section-title: 2rem;
-  --och-font-size-description: 0.9375rem;
-  --och-font-size-card-title: 1.5rem;
-  --och-font-size-card-description: 0.9375rem;
-  --och-font-size-list-title: 1.75rem;
-  --och-font-size-list-enum: 3rem;
-  --och-font-size-list-description: 1.125rem;
-  --och-font-size-form-title: 1rem;
-  --och-font-size-form-description: 0.875rem;
-  --och-font-size-header-title: 1.875rem;
-  --och-font-size-header-nav: 1.5rem;
+  --och-white: #FFFFFF;
+  --och-black: #000000;
+  --och-gray: #707070;
+  --och-beige: #fcf5ef;
+  --och-yellow: #fdfde5;
+  --och-blue: #e7edf3;
+  --och-green: #e6ede7;
+  --och-red: #f2d9d2;
+  --och-lateral-margin: 2.375rem;
+  --och-column-gap: 2rem;
 }
 
+@media only screen and (min-width: 768px) {
+  :root {
+    --och-lateral-margin: 8.875rem;
+  }
+}
 @font-face {
   font-family: "Open Sans";
   src: local("Open Sans"), url("../fonts/OpenSans/OpenSans-Light.ttf") format("truetype");
@@ -159,6 +163,209 @@ input, button, textarea, select {
   src: local("Libre Baskerville"), url("../fonts/LibreBaskerville/LibreBaskerville-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+}
+.och-title {
+  font-size: 2.5rem;
+  line-height: 48px;
+}
+
+.och-section-title {
+  font-size: 2rem;
+  line-height: 46px;
+}
+
+.och-description {
+  font-size: 0.9375rem;
+  line-height: 24px;
+}
+
+.och-link {
+  font-size: 0.9375rem;
+  line-height: 24px;
+}
+
+.och-card-title {
+  font-size: 1.5rem;
+  line-height: 36px;
+}
+
+.och-card-description {
+  font-size: 0.9375rem;
+  line-height: 24px;
+}
+
+.och-list-title {
+  font-size: 1.75rem;
+  line-height: 36px;
+}
+
+.och-list-enum {
+  font-size: 3rem;
+  line-height: 36px;
+}
+
+.och-list-description {
+  font-size: 1.125rem;
+  line-height: 28rem;
+}
+
+.och-form-title {
+  font-size: 1rem;
+  line-height: 25px;
+}
+
+.och-form-description {
+  font-size: 0.875rem;
+  line-height: 19px;
+}
+
+.och-header-title {
+  font-size: 1.875rem;
+  line-height: 36px;
+  font-family: Open Sans Condensed;
+  font-weight: 700;
+  letter-spacing: -0.025rem;
+}
+
+.och-header-menu {
+  font-size: 1.5rem;
+  line-height: 36px;
+  font-family: Libre Baskerville;
+  letter-spacing: -0.025rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .och-title {
+    font-size: 5rem;
+    line-height: 90px;
+  }
+
+  .och-section-title {
+    font-size: 3rem;
+    line-height: 60px;
+  }
+
+  .och-description {
+    font-size: 1.3125rem;
+    line-height: 34px;
+  }
+
+  .och-link {
+    font-size: 1.0625rem;
+    line-height: 27px;
+  }
+
+  .och-card-title {
+    font-size: 2rem;
+    line-height: 46px;
+  }
+
+  .och-card-description {
+    font-size: 1.0625rem;
+    line-height: 27px;
+  }
+
+  .och-list-title {
+    font-size: 1.75rem;
+    line-height: 36px;
+  }
+
+  .och-list-enum {
+    font-size: 3rem;
+    line-height: 36px;
+  }
+
+  .och-list-description {
+    font-size: 1.125rem;
+    line-height: 28px;
+  }
+
+  .och-form-title {
+    font-size: 1.5rem;
+    line-height: 36px;
+  }
+
+  .och-form-description {
+    font-size: 0.9375rem;
+    line-height: 21px;
+  }
+
+  .och-header-title {
+    font-size: 1.875rem;
+    line-height: 36px;
+    font-family: Open Sans Condensed;
+    font-weight: 700;
+    letter-spacing: -0.025rem;
+  }
+
+  .och-header-menu {
+    font-size: 1.5rem;
+    line-height: 46px;
+    font-family: Libre Baskerville;
+    letter-spacing: -0.025rem;
+  }
+}
+.och-header {
+  padding-top: 2.75rem;
+  margin: 0 var(--och-lateral-margin);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.och-header .och-header-title {
+  color: var(--och-black);
+}
+.och-header .och-header-menu-icon {
+  position: relative;
+  z-index: 3;
+}
+.och-header .och-nav {
+  padding: 0 var(--och-lateral-margin);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: ". menu menu menu";
+  column-gap: var(--och-column-gap);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  transform: translateX(100%);
+  transition: transform ease-in-out 0.3s;
+}
+.och-header .och-nav .och-header-menu {
+  grid-area: menu;
+  padding-top: 9.375rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+.och-header .och-nav .och-header-menu * {
+  padding-bottom: 1.25rem;
+  color: var(--och-black);
+}
+.och-header .och-nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: var(--och-lateral-margin);
+  bottom: 0;
+  z-index: 1;
+  background-color: var(--och-red);
+}
+
+@media only screen and (min-width: 768px) {
+  .och-header .och-nav {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: ". . . . . . . . . . menu menu";
+  }
+  .och-header .och-nav::after {
+    width: 33rem;
+    left: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

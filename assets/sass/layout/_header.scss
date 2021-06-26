@@ -12,6 +12,7 @@
     .och-header-menu-icon {
         position: relative;
         z-index: 3;
+        cursor: pointer;
     }
 
     .och-nav {
@@ -22,7 +23,7 @@
         grid-template-areas: ". menu menu menu";
         column-gap: var(--och-column-gap);
 
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
         left: 0;
@@ -67,11 +68,16 @@
 @include desktop {
     .och-header .och-nav {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-areas: ". . . . . . . . . . menu menu";
+        grid-template-areas: ". . . . . . . . b menu menu menu";
 
         &::after {
-            width: 33rem;
-            left: auto;
+            grid-row-start: b;
+            grid-column-start: b;
+            grid-row-end: b;
+            grid-column-end: menu;
+
+            margin-right: calc(0px - var(--och-lateral-margin));
+            left: 0;
         }
     }
 }

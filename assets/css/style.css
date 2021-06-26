@@ -63,7 +63,7 @@ input, button, textarea, select {
   --och-column-gap: 2rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1023px) {
   :root {
     --och-lateral-margin: 8.875rem;
   }
@@ -234,7 +234,7 @@ input, button, textarea, select {
   letter-spacing: -0.025rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1023px) {
   .och-title {
     font-size: 5rem;
     line-height: 90px;
@@ -318,6 +318,7 @@ input, button, textarea, select {
 .och-header .och-header-menu-icon {
   position: relative;
   z-index: 3;
+  cursor: pointer;
 }
 .och-header .och-nav {
   padding: 0 var(--och-lateral-margin);
@@ -325,7 +326,7 @@ input, button, textarea, select {
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: ". menu menu menu";
   column-gap: var(--och-column-gap);
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
@@ -357,14 +358,18 @@ input, button, textarea, select {
   background-color: var(--och-red);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1023px) {
   .och-header .och-nav {
     grid-template-columns: repeat(12, 1fr);
-    grid-template-areas: ". . . . . . . . . . menu menu";
+    grid-template-areas: ". . . . . . . . b menu menu menu";
   }
   .och-header .och-nav::after {
-    width: 33rem;
-    left: auto;
+    grid-row-start: b;
+    grid-column-start: b;
+    grid-row-end: b;
+    grid-column-end: menu;
+    margin-right: calc(0px - var(--och-lateral-margin));
+    left: 0;
   }
 }
 

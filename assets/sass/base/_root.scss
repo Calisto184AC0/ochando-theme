@@ -3,7 +3,7 @@
 :root {
     // Colores
     @each $key, $value in $och-colors {
-        --och-#{$key}: #{$value};
+        --och-#{'' + $key}: #{$value};
     }
 
     // Más variables

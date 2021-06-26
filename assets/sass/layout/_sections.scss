@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+/* #region Index */
+
+.och-section-index-init {
+    margin-top: 0 !important;
+
+    grid-template-areas: 
+        "title title title title"
+        "img img img img"
+        "descr descr descr descr"
+        "btn btn btn .";
+
+
+    .och-title {
+        height: 100vh;
+        padding-bottom: 3.125rem;
+
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .och-img { margin-top: 3.125rem; }
+    .och-description { margin-top: 1.875rem; }
+    .och-btn { margin-top: 2.5rem; }
+}
+
+@include desktop {
+    .och-section-index-init {
+
+        grid-template-areas: 
+            "title title title title title title title . . . . ."
+            "img img img img img . descr descr descr descr descr descr"
+            "img img img img img . btn btn . . . .";
+    }
+}
+
+/* #endregion Index */

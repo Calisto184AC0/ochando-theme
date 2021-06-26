@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.och-container {
+    padding: 0 var(--och-lateral-margin);
+
+    .och-section {
+        margin-top: 3.125rem;
+        margin-bottom: 3.125rem;
+
+        display: grid; 
+        column-gap: var(--och-column-gap);
+        grid-template-columns: repeat(4, 1fr);
+        align-items: flex-start;
+        justify-content: stretch;
+
+        .och-title {
+            grid-area: title;
+        }
+
+        .och-description {
+            grid-area: descr;
+        }
+
+        .och-img {
+            grid-area: img;
+        }
+
+        .och-btn {
+            grid-area: btn;
+        }
+    }
+}
+
+@include desktop {
+    .och-container .och-section {
+        grid-template-columns: repeat(12, 1fr);
+    }
+}

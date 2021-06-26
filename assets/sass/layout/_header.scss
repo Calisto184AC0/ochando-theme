@@ -1,38 +1,40 @@
 @use '../abstracts' as *;
 
 .och-header {
-    padding-top: 2.75rem;
-    margin: 0 var(--och-lateral-margin);
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    .och-header-title { color: var(--och-black); }
+    position: absolute;
+    top: var(--och-padding-top-header);
+    left: var(--och-lateral-margin);
+    right: var(--och-lateral-margin);
 
     .och-header-menu-icon {
-        position: relative;
-        z-index: 3;
+        position: absolute;
+        z-index: 2;
+        right: 0;
+
         cursor: pointer;
     }
 
     .och-nav {
-        padding: 0 var(--och-lateral-margin);
+        height: 100vh;
 
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: ". menu menu menu";
         column-gap: var(--och-column-gap);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "bg menu menu menu";
 
         position: absolute;
-        top: 0;
-        right: 0;
+        z-index: 1;
+        top: calc(0px - var(--och-padding-top-header));
         left: 0;
-        bottom: 0;
-        z-index: 2;
+        right: calc(0px - var(--och-lateral-margin));
 
         transform: translateX(100%);
         transition: transform ease-in-out .3s;
-
+        
         .och-header-menu {
             grid-area: menu;
 
@@ -52,12 +54,12 @@
 
         &::after {
             content: '';
+            grid-column-start: bg;
+            grid-column-end: menu;
+            grid-row-start: bg;
+            grid-row-end: bg;
 
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: var(--och-lateral-margin);
-            bottom: 0;
+            position: relative;
             z-index: 1;
 
             background-color: var(--och-red);
@@ -68,16 +70,6 @@
 @include desktop {
     .och-header .och-nav {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-areas: ". . . . . . . . b menu menu menu";
-
-        &::after {
-            grid-row-start: b;
-            grid-column-start: b;
-            grid-row-end: b;
-            grid-column-end: menu;
-
-            margin-right: calc(0px - var(--och-lateral-margin));
-            left: 0;
-        }
+        grid-template-areas: ". . . . . . . . bg menu menu menu";
     }
 }

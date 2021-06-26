@@ -9,6 +9,7 @@
     // Más variables
     --och-lateral-margin: #{$och-lateral-margin};
     --och-column-gap: #{$och-column-gap};
+    --och-padding-top-header: #{$och-padding-top-header};
 }
 
 @include desktop {

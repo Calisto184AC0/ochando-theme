@@ -8,4 +8,10 @@
 
     border-radius: 50rem;
     color: var(--och-black);
+
+    &:hover {
+        cursor: pointer;
+        border: 1px solid var(--och-green);
+        background-color: var(--och-green);
+    }
 }

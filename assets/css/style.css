@@ -328,6 +328,11 @@ input, button, textarea, select {
   border-radius: 50rem;
   color: var(--och-black);
 }
+.och-btn:hover {
+  cursor: pointer;
+  border: 1px solid var(--och-green);
+  background-color: var(--och-green);
+}
 
 .och-img {
   width: 100%;

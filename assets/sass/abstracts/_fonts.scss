@@ -34,7 +34,10 @@ $och-typo: (
         ),
         section-title: (
             font-size: (2rem, 3rem),
-            line-height: (46px, 60px)
+            line-height: (46px, 60px),
+            font-family: "Libre Baskerville",
+            font-weight: 400,
+            letter-spacing: $och-letter-spacing
         ),
         description: (
             font-size: (.9375rem, 1.3125rem),
@@ -60,15 +63,25 @@ $och-typo: (
     list: (
         title: (
             font-size: (1.75rem, 1.75rem),
-            line-height: (36px, 36px)
+            line-height: (36px, 36px),
+            font-family: "Open Sans Condensed",
+            font-weight: 700,
+            letter-spacing: $och-letter-spacing
         ),
         enum: (
             font-size: (3rem, 3rem),
-            line-height: (36px, 36px)
+            line-height: (36px, 36px),
+            font-family: "Open Sans Condensed",
+            font-weight: 700,
+            letter-spacing: $och-letter-spacing
         ),
         description: (
             font-size: (1.125rem, 1.125rem),
-            line-height: (28rem, 28px)
+            line-height: (28px, 28px),
+            font-family: "Libre Baskerville",
+            font-style: italic,
+            color: var(--och-gray),
+            text-align: center
         )
     ),
     form: (

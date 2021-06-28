@@ -14,13 +14,12 @@
 
     .och-title {
         height: 100vh;
-        padding-bottom: 3.125rem;
 
         display: flex;
         align-items: flex-end;
     }
 
-    .och-img { margin-top: 3.125rem; }
+    .och-img { padding-top: 3.125rem; margin-top: 3.125rem; }
     .och-description { margin-top: 1.875rem; }
     .och-btn { margin-top: 2.5rem; }
 }
@@ -36,3 +35,63 @@
 }
 
 /* #endregion Index */
+
+/* #region Section1 */
+
+.och-section-index-metodo {
+    grid-template-areas: 
+        "title title title title"
+        "descr descr descr descr"
+        "list list list list";
+
+    .och-section-title { padding-bottom: 1.5rem; }
+    .och-description {
+        width: 100vw;
+        padding: 0 var(--och-lateral-margin) 4.6875rem;
+
+        position: relative;
+        left: calc(0px - var(--och-lateral-margin));
+    }
+
+    .och-list-container {
+
+        .och-carousel {
+            display: flex;
+
+            .och-list {
+                min-width: 100vw;
+                padding: 0 var(--och-lateral-margin);
+    
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                position: relative;
+                left: calc(0px - var(--och-lateral-margin));
+
+                .och-list-enum { padding-bottom: .625rem; }
+                .och-list-title { padding-bottom: 2.25rem; }
+            }
+        }
+
+        .och-list-controller-container {
+            display: flex;
+            justify-content: space-evenly;
+
+            .och-list-controller {
+                width: 4.875rem;
+                height: 4.875rem;
+                padding: 1.5rem;
+                border: 1px solid var(--och-gray);;
+
+                display: flex;
+                justify-content: center;
+                align-content: center;
+
+                border-radius: 50rem;
+            }
+        }
+    }
+}
+
+/* #endregion Section1 */

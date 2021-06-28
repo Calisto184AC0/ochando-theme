@@ -177,6 +177,9 @@ input, button, textarea, select {
 .och-section-title {
   font-size: 2rem;
   line-height: 46px;
+  font-family: Libre Baskerville;
+  font-weight: 400;
+  letter-spacing: -0.025rem;
 }
 
 .och-description {
@@ -204,16 +207,26 @@ input, button, textarea, select {
 .och-list-title {
   font-size: 1.75rem;
   line-height: 36px;
+  font-family: Open Sans Condensed;
+  font-weight: 700;
+  letter-spacing: -0.025rem;
 }
 
 .och-list-enum {
   font-size: 3rem;
   line-height: 36px;
+  font-family: Open Sans Condensed;
+  font-weight: 700;
+  letter-spacing: -0.025rem;
 }
 
 .och-list-description {
   font-size: 1.125rem;
-  line-height: 28rem;
+  line-height: 28px;
+  font-family: Libre Baskerville;
+  font-style: italic;
+  color: var(--och-gray);
+  text-align: center;
 }
 
 .och-form-title {
@@ -254,6 +267,9 @@ input, button, textarea, select {
   .och-section-title {
     font-size: 3rem;
     line-height: 60px;
+    font-family: Libre Baskerville;
+    font-weight: 400;
+    letter-spacing: -0.025rem;
   }
 
   .och-description {
@@ -281,16 +297,26 @@ input, button, textarea, select {
   .och-list-title {
     font-size: 1.75rem;
     line-height: 36px;
+    font-family: Open Sans Condensed;
+    font-weight: 700;
+    letter-spacing: -0.025rem;
   }
 
   .och-list-enum {
     font-size: 3rem;
     line-height: 36px;
+    font-family: Open Sans Condensed;
+    font-weight: 700;
+    letter-spacing: -0.025rem;
   }
 
   .och-list-description {
     font-size: 1.125rem;
     line-height: 28px;
+    font-family: Libre Baskerville;
+    font-style: italic;
+    color: var(--och-gray);
+    text-align: center;
   }
 
   .och-form-title {
@@ -401,15 +427,16 @@ input, button, textarea, select {
   padding: 0 var(--och-lateral-margin);
 }
 .och-container .och-section {
+  max-width: 100vw;
   margin-top: 3.125rem;
-  margin-bottom: 3.125rem;
+  padding-bottom: 3.125rem;
   display: grid;
   column-gap: var(--och-column-gap);
   grid-template-columns: repeat(4, 1fr);
   align-items: flex-start;
   justify-content: stretch;
 }
-.och-container .och-section .och-title {
+.och-container .och-section .och-title, .och-container .och-section .och-section-title {
   grid-area: title;
 }
 .och-container .och-section .och-description {
@@ -420,6 +447,9 @@ input, button, textarea, select {
 }
 .och-container .och-section .och-btn {
   grid-area: btn;
+}
+.och-container .och-section .och-list-container {
+  grid-area: list;
 }
 
 @media only screen and (min-width: 1023px) {
@@ -434,11 +464,11 @@ input, button, textarea, select {
 }
 .och-section-index-init .och-title {
   height: 100vh;
-  padding-bottom: 3.125rem;
   display: flex;
   align-items: flex-end;
 }
 .och-section-index-init .och-img {
+  padding-top: 3.125rem;
   margin-top: 3.125rem;
 }
 .och-section-index-init .och-description {
@@ -454,5 +484,52 @@ input, button, textarea, select {
   }
 }
 /* #endregion Index */
+/* #region Section1 */
+.och-section-index-metodo {
+  grid-template-areas: "title title title title" "descr descr descr descr" "list list list list";
+}
+.och-section-index-metodo .och-section-title {
+  padding-bottom: 1.5rem;
+}
+.och-section-index-metodo .och-description {
+  width: 100vw;
+  padding: 0 var(--och-lateral-margin) 4.6875rem;
+  position: relative;
+  left: calc(0px - var(--och-lateral-margin));
+}
+.och-section-index-metodo .och-list-container .och-carousel {
+  display: flex;
+}
+.och-section-index-metodo .och-list-container .och-carousel .och-list {
+  min-width: 100vw;
+  padding: 0 var(--och-lateral-margin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: calc(0px - var(--och-lateral-margin));
+}
+.och-section-index-metodo .och-list-container .och-carousel .och-list .och-list-enum {
+  padding-bottom: 0.625rem;
+}
+.och-section-index-metodo .och-list-container .och-carousel .och-list .och-list-title {
+  padding-bottom: 2.25rem;
+}
+.och-section-index-metodo .och-list-container .och-list-controller-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.och-section-index-metodo .och-list-container .och-list-controller-container .och-list-controller {
+  width: 4.875rem;
+  height: 4.875rem;
+  padding: 1.5rem;
+  border: 1px solid var(--och-gray);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 50rem;
+}
+
+/* #endregion Section1 */
 
 /*# sourceMappingURL=style.css.map */

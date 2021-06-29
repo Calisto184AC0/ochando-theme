@@ -1,0 +1,67 @@
+.och-form {
+    padding-top: 3.125rem;
+    border-top: 1px solid var(--och-gray);
+    border-right: 1px solid var(--och-gray);
+    margin-top: 3.75rem;
+
+    display: grid; 
+    column-gap: var(--och-column-gap);
+    grid-template-columns: repeat(4, 1fr);
+    align-items: flex-start;
+    justify-content: stretch;
+
+    & > *:not(:last-child) {
+        margin-right: 1.875rem;
+    }
+
+    .och-form-title {
+        grid-area: title;
+        margin-bottom: 2.75rem;
+    }
+    .och-form-description {
+        grid-area: descr;
+        margin-top: 1.5rem;
+    }
+    input.och-input:nth-of-type(1) { grid-area: inpt1; }
+    .och-input:nth-of-type(2) { grid-area: inpt2; }
+    .och-input:nth-of-type(3) { grid-area: inpt3; }
+    textarea {
+        grid-area: inpt4;
+        resize: vertical;
+        margin-top: .5625rem;
+    }
+    .och-btn {
+        grid-area: btn;
+        background-color: transparent;
+        margin-top: 3.25rem;
+
+        &:hover { background-color: var(--och-green); }
+    }
+
+    .och-input {
+        padding: 1.4375rem 1.625rem 1.6875rem;
+
+        &:not(:last-of-type) {margin-bottom: .5625rem;}
+    }
+}
+
+.och-form-newsletter {
+    grid-template-areas: 
+        "title title title title"
+        "inpt1 inpt1 inpt1 inpt1"
+        "inpt2 inpt2 inpt2 inpt2"
+        "inpt3 inpt3 inpt3 inpt3"
+        "descr descr descr descr"
+        "btn   btn   btn   .";
+}
+
+.och-form-contacto {
+    grid-template-areas: 
+        "title title title title"
+        "inpt1 inpt1 inpt1 inpt1"
+        "inpt2 inpt2 inpt2 inpt2"
+        "inpt3 inpt3 inpt3 inpt3"
+        "inpt4 inpt4 inpt4 inpt4"
+        "descr descr descr descr"
+        "btn   btn   btn   .";
+}

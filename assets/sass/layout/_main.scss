@@ -14,25 +14,19 @@
         align-items: flex-start;
         justify-content: stretch;
 
-        .och-title, .och-section-title {
-            grid-area: title;
-        }
+        .och-title, .och-section-title { grid-area: title; }
 
-        .och-description {
-            grid-area: descr;
-        }
+        .och-description { grid-area: descr; }
 
-        .och-img {
-            grid-area: img;
-        }
+        .och-img { grid-area: img; }
 
-        .och-btn {
-            grid-area: btn;
-        }
+        .och-btn { grid-area: btn; }
 
-        .och-list-container {
-            grid-area: list;
-        }
+        .och-list-container { grid-area: list; }
+
+        .och-card:nth-of-type(1) { grid-area: card1; }
+        .och-card:nth-of-type(2) { grid-area: card2; }
+        .och-card:nth-of-type(3) { grid-area: card3; }
     }
 }
 

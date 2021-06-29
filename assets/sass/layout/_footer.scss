@@ -1,0 +1,49 @@
+.och-footer {
+    padding: 0 var(--och-lateral-margin) 2.875rem;
+
+    display: grid; 
+    column-gap: var(--och-column-gap);
+    grid-template-columns: repeat(4, 1fr);
+    align-items: flex-start;
+    justify-content: stretch;
+    grid-template-areas: 
+        "title1 title1 title1 title1"
+        "newsle newsle newsle newsle"
+        "title2 title2 title2 title2"
+        "contac contac contac contac"
+        "links  links  links  links";
+
+    .och-title:nth-of-type(1) { grid-area: title1; }
+    .och-title:nth-of-type(2) {
+        grid-area: title2;
+        margin-top: 6.25rem;
+    }
+    .och-form-newsletter { grid-area: newsle; }
+    .och-form-contacto { grid-area: contac; }
+    .och-footer-links {
+        grid-area: links;
+
+        margin-top: 12rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        li a {
+            color: var(--och-gray);
+            &:last-child {
+                padding-right: .4rem;
+            }
+        }
+
+        .och-rrss, .och-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            li {
+                margin-top: .875rem;
+            }
+        }
+    }
+}

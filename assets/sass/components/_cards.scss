@@ -1,0 +1,27 @@
+.och-section-index-programas .och-card {
+    padding: 2.5rem 1.875rem 4rem;
+
+    .och-card-description { margin-top: 2.5rem; }
+    .och-btn { margin-top: 4.75rem; }
+}
+
+.och-section-index-articulos .och-card {
+
+    .och-card-img { width: 100%; }
+    .och-card-title { margin-top: 1.875rem; }
+    .och-card-description { margin-top: 1.75rem; }
+}
+
+
+
+.och-card-red {
+    background-color: var(--och-red);
+}
+
+.och-card-green {
+    background-color: var(--och-green);
+}
+
+.och-card-blue {
+    background-color: var(--och-blue);
+}

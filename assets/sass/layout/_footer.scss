@@ -1,9 +1,10 @@
+@use '../abstracts' as *;
+
 .och-footer {
     padding: 0 var(--och-lateral-margin) 2.875rem;
 
     display: grid; 
-    column-gap: var(--och-column-gap);
-    grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--och-column-gap); 
     align-items: flex-start;
     justify-content: stretch;
     grid-template-areas: 
@@ -13,8 +14,8 @@
         "contac contac contac contac"
         "links  links  links  links";
 
-    .och-title:nth-of-type(1) { grid-area: title1; }
-    .och-title:nth-of-type(2) {
+    .och-section-title:nth-of-type(1) { grid-area: title1; }
+    .och-section-title:nth-of-type(2) {
         grid-area: title2;
         margin-top: 6.25rem;
     }
@@ -29,13 +30,6 @@
         flex-direction: column;
         justify-content: center;
 
-        li a {
-            color: var(--och-gray);
-            &:last-child {
-                padding-right: .4rem;
-            }
-        }
-
         .och-rrss, .och-info {
             display: flex;
             flex-wrap: wrap;
@@ -43,6 +37,38 @@
 
             li {
                 margin-top: .875rem;
+
+                a {
+                    color: var(--och-gray);
+                    &:last-child {
+                        padding-right: .4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    .och-footer {
+        grid-template-areas: 
+            "title1 title1 title1 title1 title1 title1 title2 title2 title2 title2 title2 title2"
+            "newsle newsle newsle newsle newsle .      contac contac contac contac contac contac"
+            "links  links  links  links  links  links  links  links  links  links  links  links";
+
+        .och-section-title:nth-of-type(2) { margin-top: 0rem; }
+    }
+
+    .och-footer-links {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+
+        .och-rrss, .och-info {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+
+            li:not(:last-of-type) {
+                margin-right: 2.625rem;
             }
         }
     }

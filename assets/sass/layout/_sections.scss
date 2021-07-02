@@ -96,6 +96,15 @@
     }
 }
 
+@include desktop {
+    .och-section-index-metodo {
+        grid-template-areas: 
+            "title title title title title title descr descr descr descr descr descr"
+            ". . . . . . btn btn . . . ."
+            "list list list list list list list list list list list list";
+    }
+}
+
 /* #endregion Metodo */
 
 /* #region Programas */
@@ -107,6 +116,14 @@
         "card2 card2 card2 card2"
         "card3 card3 card3 card3";
     row-gap: 3.125rem;
+}
+
+@include desktop {
+    .och-section-index-programas {
+        grid-template-areas: 
+            "title title title title title title title . . . . ."
+            "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+    }
 }
 
 /* #endregion Programas */
@@ -122,6 +139,14 @@
 
     .och-card:nth-of-type(1) { margin-top: 3.75rem; }
     .och-card:nth-of-type(2), .och-card:nth-of-type(3) { margin-top: 4.625rem; }
+}
+
+@include desktop {
+    .och-section-index-articulos {
+        grid-template-areas: 
+            "title title title title title title title . . . . ."
+            "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+    }
 }
 
 /* #endregion Artículos */

@@ -388,7 +388,12 @@ input, button, textarea, select {
   margin-top: 2.5rem;
 }
 .och-section-index-programas .och-card .och-btn {
+  width: 100%;
+  max-width: 15.375rem;
   margin-top: 4.75rem;
+}
+.och-section-index-programas .och-card .och-btn:hover {
+  background-color: var(--och-beige);
 }
 
 .och-section-index-articulos .och-card .och-card-img {
@@ -422,15 +427,14 @@ input, button, textarea, select {
   padding: 0 var(--och-lateral-margin) 2.875rem;
   display: grid;
   column-gap: var(--och-column-gap);
-  grid-template-columns: repeat(4, 1fr);
   align-items: flex-start;
   justify-content: stretch;
   grid-template-areas: "title1 title1 title1 title1" "newsle newsle newsle newsle" "title2 title2 title2 title2" "contac contac contac contac" "links  links  links  links";
 }
-.och-footer .och-title:nth-of-type(1) {
+.och-footer .och-section-title:nth-of-type(1) {
   grid-area: title1;
 }
-.och-footer .och-title:nth-of-type(2) {
+.och-footer .och-section-title:nth-of-type(2) {
   grid-area: title2;
   margin-top: 6.25rem;
 }
@@ -447,12 +451,6 @@ input, button, textarea, select {
   flex-direction: column;
   justify-content: center;
 }
-.och-footer .och-footer-links li a {
-  color: var(--och-gray);
-}
-.och-footer .och-footer-links li a:last-child {
-  padding-right: 0.4rem;
-}
 .och-footer .och-footer-links .och-rrss, .och-footer .och-footer-links .och-info {
   display: flex;
   flex-wrap: wrap;
@@ -461,7 +459,33 @@ input, button, textarea, select {
 .och-footer .och-footer-links .och-rrss li, .och-footer .och-footer-links .och-info li {
   margin-top: 0.875rem;
 }
+.och-footer .och-footer-links .och-rrss li a, .och-footer .och-footer-links .och-info li a {
+  color: var(--och-gray);
+}
+.och-footer .och-footer-links .och-rrss li a:last-child, .och-footer .och-footer-links .och-info li a:last-child {
+  padding-right: 0.4rem;
+}
 
+@media only screen and (min-width: 1023px) {
+  .och-footer {
+    grid-template-areas: "title1 title1 title1 title1 title1 title1 title2 title2 title2 title2 title2 title2" "newsle newsle newsle newsle newsle .      contac contac contac contac contac contac" "links  links  links  links  links  links  links  links  links  links  links  links";
+  }
+  .och-footer .och-section-title:nth-of-type(2) {
+    margin-top: 0rem;
+  }
+
+  .och-footer-links {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+  .och-footer-links .och-rrss, .och-footer-links .och-info {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .och-footer-links .och-rrss li:not(:last-of-type), .och-footer-links .och-info li:not(:last-of-type) {
+    margin-right: 2.625rem;
+  }
+}
 .och-form {
   padding-top: 3.125rem;
   border-top: 1px solid var(--och-gray);
@@ -508,6 +532,11 @@ input, button, textarea, select {
 }
 .och-form .och-input {
   padding: 1.4375rem 1.625rem 1.6875rem;
+  border: 1px solid var(--och-gray);
+  border-radius: 5px;
+}
+.och-form .och-input::placeholder {
+  color: var(--och-black);
 }
 .och-form .och-input:not(:last-of-type) {
   margin-bottom: 0.5625rem;
@@ -521,6 +550,24 @@ input, button, textarea, select {
   grid-template-areas: "title title title title" "inpt1 inpt1 inpt1 inpt1" "inpt2 inpt2 inpt2 inpt2" "inpt3 inpt3 inpt3 inpt3" "inpt4 inpt4 inpt4 inpt4" "descr descr descr descr" "btn   btn   btn   .";
 }
 
+@media only screen and (min-width: 1023px) {
+  .och-form > * {
+    margin-right: 0;
+  }
+  .och-form .och-input {
+    margin-right: calc(0px - var(--och-column-gap));
+  }
+
+  .och-form-newsletter {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "title title title title ." "inpt1 inpt1 inpt1 inpt1 ." "inpt2 inpt2 inpt2 inpt2 ." "inpt3 inpt3 inpt3 inpt3 ." "descr descr descr descr ." "btn   btn   .     .     .";
+  }
+
+  .och-form-contacto {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "title title title title title ." "inpt1 inpt1 inpt1 inpt1 inpt1 ." "inpt2 inpt2 inpt2 inpt2 inpt2 ." "inpt3 inpt3 inpt3 inpt3 inpt3 ." "inpt4 inpt4 inpt4 inpt4 inpt4 ." "descr descr descr descr .     ." "btn   btn   .     .     .     .";
+  }
+}
 .och-header {
   display: flex;
   justify-content: space-between;
@@ -696,6 +743,11 @@ input, button, textarea, select {
   border-radius: 50rem;
 }
 
+@media only screen and (min-width: 1023px) {
+  .och-section-index-metodo {
+    grid-template-areas: "title title title title title title descr descr descr descr descr descr" ". . . . . . btn btn . . . ." "list list list list list list list list list list list list";
+  }
+}
 /* #endregion Metodo */
 /* #region Programas */
 .och-section-index-programas {
@@ -703,6 +755,11 @@ input, button, textarea, select {
   row-gap: 3.125rem;
 }
 
+@media only screen and (min-width: 1023px) {
+  .och-section-index-programas {
+    grid-template-areas: "title title title title title title title . . . . ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+  }
+}
 /* #endregion Programas */
 /* #region Artículos */
 .och-section-index-articulos {
@@ -715,6 +772,11 @@ input, button, textarea, select {
   margin-top: 4.625rem;
 }
 
+@media only screen and (min-width: 1023px) {
+  .och-section-index-articulos {
+    grid-template-areas: "title title title title title title title . . . . ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+  }
+}
 /* #endregion Artículos */
 /* #endregion Principal */
 

@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .och-form {
     padding-top: 3.125rem;
     border-top: 1px solid var(--och-gray);
@@ -40,8 +42,14 @@
 
     .och-input {
         padding: 1.4375rem 1.625rem 1.6875rem;
+        border: 1px solid var(--och-gray);
+        border-radius: 5px;
 
-        &:not(:last-of-type) {margin-bottom: .5625rem;}
+        &::placeholder {
+            color: var(--och-black)
+        }
+
+        &:not(:last-of-type) { margin-bottom: .5625rem; }
     }
 }
 
@@ -64,4 +72,38 @@
         "inpt4 inpt4 inpt4 inpt4"
         "descr descr descr descr"
         "btn   btn   btn   .";
+}
+
+@include desktop {
+
+    .och-form {
+        & > * {
+            margin-right: 0;
+        }
+
+        .och-input { margin-right: calc(0px - var(--och-column-gap)); }
+    }
+
+    .och-form-newsletter {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: 
+            "title title title title ."
+            "inpt1 inpt1 inpt1 inpt1 ."
+            "inpt2 inpt2 inpt2 inpt2 ."
+            "inpt3 inpt3 inpt3 inpt3 ."
+            "descr descr descr descr ."
+            "btn   btn   .     .     .";
+    }
+
+    .och-form-contacto {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: 
+            "title title title title title ."
+            "inpt1 inpt1 inpt1 inpt1 inpt1 ."
+            "inpt2 inpt2 inpt2 inpt2 inpt2 ."
+            "inpt3 inpt3 inpt3 inpt3 inpt3 ."
+            "inpt4 inpt4 inpt4 inpt4 inpt4 ."
+            "descr descr descr descr .     ."
+            "btn   btn   .     .     .     .";
+    }
 }

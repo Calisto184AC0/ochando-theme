@@ -1,8 +1,18 @@
+@use '../abstracts' as *;
+
 .och-section-index-programas .och-card {
     padding: 2.5rem 1.875rem 4rem;
 
     .och-card-description { margin-top: 2.5rem; }
-    .och-btn { margin-top: 4.75rem; }
+    .och-btn {
+        width: 100%;
+        max-width: 15.375rem;
+        margin-top: 4.75rem;
+
+        &:hover {
+            background-color: var(--och-beige);
+        }
+    }
 }
 
 .och-section-index-articulos .och-card {

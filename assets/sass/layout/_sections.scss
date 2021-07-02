@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-/* #region Principal */
+/* #region ---- Principal ---- */
 
 /* #region Index */
 
@@ -54,45 +54,6 @@
 
         position: relative;
         left: calc(0px - var(--och-lateral-margin));
-    }
-
-    .och-list-container {
-
-        .och-carousel {
-            display: flex;
-
-            .och-list {
-                min-width: 100vw;
-                padding: 0 var(--och-lateral-margin);
-    
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                position: relative;
-                left: calc(0px - var(--och-lateral-margin));
-
-                .och-list-enum { padding-bottom: .625rem; }
-                .och-list-title { padding-bottom: 2.25rem; }
-            }
-        }
-
-        .och-list-controller-container {
-            display: flex;
-
-            .och-list-controller {
-                width: 4.875rem;
-                height: 4.875rem;
-                padding: 1.5rem;
-                border: 1px solid var(--och-gray);;
-
-                display: flex;
-                justify-content: center;
-                align-content: center;
-
-                border-radius: 50rem;
-            }
-        }
     }
 }
 
@@ -151,4 +112,112 @@
 
 /* #endregion Artículos */
 
-/* #endregion Principal */
+/* #endregion ---- Principal ---- */
+
+/* #region ---- Quién soy ---- */
+
+/* #region Index */
+
+.och-section-quiensoy-init {
+    margin-top: 0 !important;
+
+    grid-template-areas: 
+        "title title title title"
+        "img img img img"
+        "descr descr descr descr";
+
+
+    .och-title {
+        height: 100vh;
+
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 3.125rem;
+    }
+
+    .och-img { padding-top: 3.125rem; margin-top: 3.125rem; }
+    .och-description { margin-top: 1.875rem; }
+}
+
+@include desktop {
+    .och-section-quiensoy-init {
+        grid-template-areas: 
+            "title title title title title title . . . . . ."
+            "img img . descr descr descr descr descr descr descr descr descr";
+        
+        .och-img {
+            margin-top: 0;
+        }
+    }
+}
+
+/* #endregion Index */
+
+/* #region Info */
+
+.och-section-quiensoy-info {
+    grid-template-areas: 
+        "title title title title"
+        "card1 card1 card1 card1"
+        "card2 card2 card2 card2"
+        "card3 card3 card3 card3";
+
+    .och-section-title {
+        font-size: 1.5rem;
+        line-height: 36px;
+        margin-bottom: 17.4375rem;
+    }
+}
+
+@include desktop {
+    .och-section-quiensoy-info {
+        grid-template-areas: 
+            "title title title title title title title title title title title title"
+            "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+
+            .och-section-title {
+                font-size: 2.375rem;
+                line-height: 54px;
+                margin-bottom: 9.5rem;
+            }
+    }
+}
+
+/* #endregion Info */
+
+/* #region More Info */
+
+.och-section-quiensoy-more {
+    grid-template-areas: 
+        "title title title title"
+        "descr descr descr descr";
+
+    .och-section-title { margin-bottom: 3.5rem; }
+    .och-description {
+        padding: 2.5rem 1.875rem;
+        position: relative;
+        font-family: "Libre Baskerville";
+        letter-spacing: -0.025rem;
+        font-size: 1rem;
+        line-height: 25px;
+        background-color: var(--och-green);
+    }
+}
+
+@include desktop {
+    .och-section-quiensoy-more {
+        grid-template-areas: 
+            "title title title title title title . . . . . ."
+            "descr descr descr descr descr descr descr descr descr descr descr descr";
+
+        .och-description {
+            padding: 6.25rem 8.625rem;
+            font-size: 2rem;
+            line-height: 52px;
+        }
+    }
+}
+
+/* #endregion More Info */
+
+/* #endregion ---- Quién soy ---- */

@@ -406,6 +406,39 @@ input, button, textarea, select {
   margin-top: 1.75rem;
 }
 
+.och-section-quiensoy-info .och-card {
+  padding-top: 1.875rem;
+  border-top: 1px solid var(--och-gray);
+}
+.och-section-quiensoy-info .och-card .och-card-title {
+  margin-bottom: 2.25rem;
+}
+.och-section-quiensoy-info .och-card .och-card-description {
+  margin-bottom: 3.25rem;
+}
+.och-section-quiensoy-info .och-card:nth-of-type(3) {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: var(--och-column-gap);
+  grid-template-areas: "title title title title" "descr descr descr descr" "btn   btn   btn   .";
+}
+.och-section-quiensoy-info .och-card:nth-of-type(3) .och-card-title {
+  grid-area: title;
+}
+.och-section-quiensoy-info .och-card:nth-of-type(3) .och-card-description {
+  grid-area: descr;
+}
+.och-section-quiensoy-info .och-card:nth-of-type(3) .och-btn {
+  grid-area: btn;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-quiensoy-info .och-card {
+    padding-right: 2.25rem;
+    border-top: 0;
+    border-right: 1px solid var(--och-gray);
+  }
+}
 .och-card-red {
   background-color: var(--och-red);
 }
@@ -416,6 +449,38 @@ input, button, textarea, select {
 
 .och-card-blue {
   background-color: var(--och-blue);
+}
+
+.och-list-container .och-carousel {
+  display: flex;
+}
+.och-list-container .och-carousel .och-list {
+  min-width: 100vw;
+  padding: 0 var(--och-lateral-margin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: calc(0px - var(--och-lateral-margin));
+}
+.och-list-container .och-carousel .och-list .och-list-enum {
+  padding-bottom: 0.625rem;
+}
+.och-list-container .och-carousel .och-list .och-list-title {
+  padding-bottom: 2.25rem;
+}
+.och-list-container .och-list-controller-container {
+  display: flex;
+}
+.och-list-container .och-list-controller-container .och-list-controller {
+  width: 4.875rem;
+  height: 4.875rem;
+  padding: 1.5rem;
+  border: 1px solid var(--och-gray);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 50rem;
 }
 
 .och-img {
@@ -669,7 +734,7 @@ input, button, textarea, select {
     grid-template-columns: repeat(12, 1fr);
   }
 }
-/* #region Principal */
+/* #region ---- Principal ---- */
 /* #region Index */
 .och-section-index-init {
   margin-top: 0 !important;
@@ -711,37 +776,6 @@ input, button, textarea, select {
   position: relative;
   left: calc(0px - var(--och-lateral-margin));
 }
-.och-section-index-metodo .och-list-container .och-carousel {
-  display: flex;
-}
-.och-section-index-metodo .och-list-container .och-carousel .och-list {
-  min-width: 100vw;
-  padding: 0 var(--och-lateral-margin);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  left: calc(0px - var(--och-lateral-margin));
-}
-.och-section-index-metodo .och-list-container .och-carousel .och-list .och-list-enum {
-  padding-bottom: 0.625rem;
-}
-.och-section-index-metodo .och-list-container .och-carousel .och-list .och-list-title {
-  padding-bottom: 2.25rem;
-}
-.och-section-index-metodo .och-list-container .och-list-controller-container {
-  display: flex;
-}
-.och-section-index-metodo .och-list-container .och-list-controller-container .och-list-controller {
-  width: 4.875rem;
-  height: 4.875rem;
-  padding: 1.5rem;
-  border: 1px solid var(--och-gray);
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  border-radius: 50rem;
-}
 
 @media only screen and (min-width: 1023px) {
   .och-section-index-metodo {
@@ -778,6 +812,85 @@ input, button, textarea, select {
   }
 }
 /* #endregion Artículos */
-/* #endregion Principal */
+/* #endregion ---- Principal ---- */
+/* #region ---- Quién soy ---- */
+/* #region Index */
+.och-section-quiensoy-init {
+  margin-top: 0 !important;
+  grid-template-areas: "title title title title" "img img img img" "descr descr descr descr";
+}
+.och-section-quiensoy-init .och-title {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 3.125rem;
+}
+.och-section-quiensoy-init .och-img {
+  padding-top: 3.125rem;
+  margin-top: 3.125rem;
+}
+.och-section-quiensoy-init .och-description {
+  margin-top: 1.875rem;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-quiensoy-init {
+    grid-template-areas: "title title title title title title . . . . . ." "img img . descr descr descr descr descr descr descr descr descr";
+  }
+  .och-section-quiensoy-init .och-img {
+    margin-top: 0;
+  }
+}
+/* #endregion Index */
+/* #region Info */
+.och-section-quiensoy-info {
+  grid-template-areas: "title title title title" "card1 card1 card1 card1" "card2 card2 card2 card2" "card3 card3 card3 card3";
+}
+.och-section-quiensoy-info .och-section-title {
+  font-size: 1.5rem;
+  line-height: 36px;
+  margin-bottom: 17.4375rem;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-quiensoy-info {
+    grid-template-areas: "title title title title title title title title title title title title" "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+  }
+  .och-section-quiensoy-info .och-section-title {
+    font-size: 2.375rem;
+    line-height: 54px;
+    margin-bottom: 9.5rem;
+  }
+}
+/* #endregion Info */
+/* #region More Info */
+.och-section-quiensoy-more {
+  grid-template-areas: "title title title title" "descr descr descr descr";
+}
+.och-section-quiensoy-more .och-section-title {
+  margin-bottom: 3.5rem;
+}
+.och-section-quiensoy-more .och-description {
+  padding: 2.5rem 1.875rem;
+  position: relative;
+  font-family: "Libre Baskerville";
+  letter-spacing: -0.025rem;
+  font-size: 1rem;
+  line-height: 25px;
+  background-color: var(--och-green);
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-quiensoy-more {
+    grid-template-areas: "title title title title title title . . . . . ." "descr descr descr descr descr descr descr descr descr descr descr descr";
+  }
+  .och-section-quiensoy-more .och-description {
+    padding: 6.25rem 8.625rem;
+    font-size: 2rem;
+    line-height: 52px;
+  }
+}
+/* #endregion More Info */
+/* #endregion ---- Quién soy ---- */
 
 /*# sourceMappingURL=style.css.map */

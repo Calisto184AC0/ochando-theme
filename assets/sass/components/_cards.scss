@@ -22,6 +22,36 @@
     .och-card-description { margin-top: 1.75rem; }
 }
 
+.och-section-quiensoy-info .och-card {
+    padding-top: 1.875rem;
+    border-top: 1px solid var(--och-gray);
+
+    .och-card-title { margin-bottom: 2.25rem; }
+    .och-card-description { margin-bottom: 3.25rem; }
+    
+    &:nth-of-type(3) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: var(--och-column-gap);
+        grid-template-areas: 
+            "title title title title"
+            "descr descr descr descr"
+            "btn   btn   btn   .";
+        
+        .och-card-title { grid-area: title; }
+        .och-card-description { grid-area: descr; }
+        .och-btn { grid-area: btn; }
+    }
+}
+
+@include desktop {
+    .och-section-quiensoy-info .och-card {
+        padding-right: 2.25rem;
+        border-top: 0;
+        border-right: 1px solid var(--och-gray);
+    }
+}
+
 
 
 .och-card-red {

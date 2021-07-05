@@ -3,6 +3,7 @@
 .och-list-container {
 
     .och-carousel {
+        margin-bottom: 4.5rem;
         display: flex;
 
         .och-list {
@@ -22,6 +23,9 @@
     }
 
     .och-list-controller-container {
+        width: 100vw;
+        margin-left: calc(0px - var(--och-lateral-margin));
+        justify-content: center;
         display: flex;
 
         .och-list-controller {
@@ -35,6 +39,8 @@
             align-content: center;
 
             border-radius: 50rem;
+
+            &:first-of-type { margin-right: var(--och-column-gap); }
         }
     }
 }

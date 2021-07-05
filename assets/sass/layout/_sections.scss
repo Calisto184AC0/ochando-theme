@@ -34,6 +34,14 @@
             "title title title title title title title . . . . ."
             "img img img img img . descr descr descr descr descr descr"
             "img img img img img . btn btn . . . .";
+
+        .och-title {
+            height: 70vh;
+        }
+
+        .och-img {
+            margin-top: 0;
+        }
     }
 }
 
@@ -48,13 +56,7 @@
         "list list list list";
 
     .och-section-title { padding-bottom: 1.5rem; }
-    .och-description {
-        width: 100vw;
-        padding: 0 var(--och-lateral-margin) 4.6875rem;
-
-        position: relative;
-        left: calc(0px - var(--och-lateral-margin));
-    }
+    .och-description { margin-bottom: 6.25rem; }
 }
 
 @include desktop {
@@ -96,17 +98,29 @@
         "title title title title"
         "card1 card1 card1 card1"
         "card2 card2 card2 card2"
-        "card3 card3 card3 card3";
+        "card3 card3 card3 card3"
+        "btn   btn   btn   btn";
 
     .och-card:nth-of-type(1) { margin-top: 3.75rem; }
     .och-card:nth-of-type(2), .och-card:nth-of-type(3) { margin-top: 4.625rem; }
+
+    .och-btn {
+        width: 17.375rem;
+        margin-top: 4.75rem;
+    }
 }
 
 @include desktop {
     .och-section-index-articulos {
         grid-template-areas: 
             "title title title title title title title . . . . ."
-            "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+            "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3"
+            "btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn";
+
+        .och-btn {
+            margin-top: 6rem;
+            justify-self: center;
+        }
     }
 }
 
@@ -145,6 +159,10 @@
             "title title title title title title . . . . . ."
             "img img . descr descr descr descr descr descr descr descr descr";
         
+        .och-title {
+            height: 70vh;
+        }
+
         .och-img {
             margin-top: 0;
         }
@@ -156,6 +174,7 @@
 /* #region Info */
 
 .och-section-quiensoy-info {
+    align-items: stretch !important;
     grid-template-areas: 
         "title title title title"
         "card1 card1 card1 card1"

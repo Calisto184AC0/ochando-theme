@@ -54,6 +54,8 @@
 }
 
 .och-form-newsletter {
+    grid-template-rows: auto auto auto auto auto 1fr;
+
     grid-template-areas: 
         "title title title title"
         "inpt1 inpt1 inpt1 inpt1"

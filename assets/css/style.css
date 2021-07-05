@@ -398,6 +398,7 @@ input, button, textarea, select {
 
 .och-section-index-articulos .och-card .och-card-img {
   width: 100%;
+  height: auto;
 }
 .och-section-index-articulos .och-card .och-card-title {
   margin-top: 1.875rem;
@@ -452,6 +453,7 @@ input, button, textarea, select {
 }
 
 .och-list-container .och-carousel {
+  margin-bottom: 4.5rem;
   display: flex;
 }
 .och-list-container .och-carousel .och-list {
@@ -470,6 +472,9 @@ input, button, textarea, select {
   padding-bottom: 2.25rem;
 }
 .och-list-container .och-list-controller-container {
+  width: 100vw;
+  margin-left: calc(0px - var(--och-lateral-margin));
+  justify-content: center;
   display: flex;
 }
 .och-list-container .och-list-controller-container .och-list-controller {
@@ -482,6 +487,9 @@ input, button, textarea, select {
   align-content: center;
   border-radius: 50rem;
 }
+.och-list-container .och-list-controller-container .och-list-controller:first-of-type {
+  margin-right: var(--och-column-gap);
+}
 
 .och-img {
   width: 100%;
@@ -489,10 +497,9 @@ input, button, textarea, select {
 }
 
 .och-footer {
-  padding: 0 var(--och-lateral-margin) 2.875rem;
+  padding: 11rem var(--och-lateral-margin) 2.875rem;
   display: grid;
   column-gap: var(--och-column-gap);
-  align-items: flex-start;
   justify-content: stretch;
   grid-template-areas: "title1 title1 title1 title1" "newsle newsle newsle newsle" "title2 title2 title2 title2" "contac contac contac contac" "links  links  links  links";
 }
@@ -608,6 +615,7 @@ input, button, textarea, select {
 }
 
 .och-form-newsletter {
+  grid-template-rows: auto auto auto auto auto 1fr;
   grid-template-areas: "title title title title" "inpt1 inpt1 inpt1 inpt1" "inpt2 inpt2 inpt2 inpt2" "inpt3 inpt3 inpt3 inpt3" "descr descr descr descr" "btn   btn   btn   .";
 }
 
@@ -761,6 +769,12 @@ input, button, textarea, select {
   .och-section-index-init {
     grid-template-areas: "title title title title title title title . . . . ." "img img img img img . descr descr descr descr descr descr" "img img img img img . btn btn . . . .";
   }
+  .och-section-index-init .och-title {
+    height: 70vh;
+  }
+  .och-section-index-init .och-img {
+    margin-top: 0;
+  }
 }
 /* #endregion Index */
 /* #region Metodo */
@@ -771,10 +785,7 @@ input, button, textarea, select {
   padding-bottom: 1.5rem;
 }
 .och-section-index-metodo .och-description {
-  width: 100vw;
-  padding: 0 var(--och-lateral-margin) 4.6875rem;
-  position: relative;
-  left: calc(0px - var(--och-lateral-margin));
+  margin-bottom: 6.25rem;
 }
 
 @media only screen and (min-width: 1023px) {
@@ -797,7 +808,7 @@ input, button, textarea, select {
 /* #endregion Programas */
 /* #region Artículos */
 .och-section-index-articulos {
-  grid-template-areas: "title title title title" "card1 card1 card1 card1" "card2 card2 card2 card2" "card3 card3 card3 card3";
+  grid-template-areas: "title title title title" "card1 card1 card1 card1" "card2 card2 card2 card2" "card3 card3 card3 card3" "btn   btn   btn   btn";
 }
 .och-section-index-articulos .och-card:nth-of-type(1) {
   margin-top: 3.75rem;
@@ -805,10 +816,18 @@ input, button, textarea, select {
 .och-section-index-articulos .och-card:nth-of-type(2), .och-section-index-articulos .och-card:nth-of-type(3) {
   margin-top: 4.625rem;
 }
+.och-section-index-articulos .och-btn {
+  width: 17.375rem;
+  margin-top: 4.75rem;
+}
 
 @media only screen and (min-width: 1023px) {
   .och-section-index-articulos {
-    grid-template-areas: "title title title title title title title . . . . ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+    grid-template-areas: "title title title title title title title . . . . ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3" "btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn";
+  }
+  .och-section-index-articulos .och-btn {
+    margin-top: 6rem;
+    justify-self: center;
   }
 }
 /* #endregion Artículos */
@@ -837,6 +856,9 @@ input, button, textarea, select {
   .och-section-quiensoy-init {
     grid-template-areas: "title title title title title title . . . . . ." "img img . descr descr descr descr descr descr descr descr descr";
   }
+  .och-section-quiensoy-init .och-title {
+    height: 70vh;
+  }
   .och-section-quiensoy-init .och-img {
     margin-top: 0;
   }
@@ -844,6 +866,7 @@ input, button, textarea, select {
 /* #endregion Index */
 /* #region Info */
 .och-section-quiensoy-info {
+  align-items: stretch !important;
   grid-template-areas: "title title title title" "card1 card1 card1 card1" "card2 card2 card2 card2" "card3 card3 card3 card3";
 }
 .och-section-quiensoy-info .och-section-title {

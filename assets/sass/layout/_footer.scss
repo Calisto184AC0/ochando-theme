@@ -1,11 +1,10 @@
 @use '../abstracts' as *;
 
 .och-footer {
-    padding: 0 var(--och-lateral-margin) 2.875rem;
+    padding: 11rem var(--och-lateral-margin) 2.875rem;
 
     display: grid; 
-    column-gap: var(--och-column-gap); 
-    align-items: flex-start;
+    column-gap: var(--och-column-gap);
     justify-content: stretch;
     grid-template-areas: 
         "title1 title1 title1 title1"

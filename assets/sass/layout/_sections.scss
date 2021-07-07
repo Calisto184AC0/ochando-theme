@@ -57,6 +57,7 @@
 
     .och-section-title { padding-bottom: 1.5rem; }
     .och-description { margin-bottom: 6.25rem; }
+    .och-btn { display: none; }
 }
 
 @include desktop {
@@ -65,6 +66,9 @@
             "title title title title title title descr descr descr descr descr descr"
             ". . . . . . btn btn . . . ."
             "list list list list list list list list list list list list";
+
+        .och-description { margin-bottom: 3.125rem; }
+        .och-btn { margin-bottom: 13.5rem; display: flex; }
     }
 }
 

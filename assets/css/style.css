@@ -215,6 +215,7 @@ input, button, textarea, select {
   font-family: Open Sans Condensed;
   font-weight: 700;
   letter-spacing: -0.025rem;
+  text-align: center;
 }
 
 .och-list-enum {
@@ -223,6 +224,7 @@ input, button, textarea, select {
   font-family: Open Sans Condensed;
   font-weight: 700;
   letter-spacing: -0.025rem;
+  text-align: center;
 }
 
 .och-list-description {
@@ -315,6 +317,7 @@ input, button, textarea, select {
     font-family: Open Sans Condensed;
     font-weight: 700;
     letter-spacing: -0.025rem;
+    text-align: center;
   }
 
   .och-list-enum {
@@ -323,6 +326,7 @@ input, button, textarea, select {
     font-family: Open Sans Condensed;
     font-weight: 700;
     letter-spacing: -0.025rem;
+    text-align: center;
   }
 
   .och-list-description {
@@ -491,6 +495,54 @@ input, button, textarea, select {
   margin-right: var(--och-column-gap);
 }
 
+@media only screen and (min-width: 1023px) {
+  .och-list-container {
+    display: grid;
+    column-gap: var(--och-column-gap);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: "l1 l1 l2 l2 l3 l3 l4 l4 l5 l5 l6 l6";
+    position: relative;
+  }
+  .och-list-container .och-list:nth-of-type(1) {
+    grid-area: l1;
+  }
+  .och-list-container .och-list:nth-of-type(2) {
+    grid-area: l2;
+  }
+  .och-list-container .och-list:nth-of-type(3) {
+    grid-area: l3;
+  }
+  .och-list-container .och-list:nth-of-type(4) {
+    grid-area: l4;
+  }
+  .och-list-container .och-list:nth-of-type(5) {
+    grid-area: l5;
+  }
+  .och-list-container .och-list:nth-of-type(6) {
+    grid-area: l6;
+    margin-top: 3rem;
+  }
+  .och-list-container .och-list {
+    display: grid;
+    grid-template-rows: auto 6.25rem 1fr;
+    justify-content: center;
+  }
+  .och-list-container .och-list .och-list-enum {
+    justify-self: center;
+    width: 8rem;
+    margin-bottom: 2rem;
+    background-color: var(--och-beige);
+  }
+  .och-list-container::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 1px;
+    width: 100%;
+    background-color: var(--och-gray);
+    top: 1rem;
+  }
+}
 .och-img {
   width: 100%;
   height: auto;
@@ -787,10 +839,20 @@ input, button, textarea, select {
 .och-section-index-metodo .och-description {
   margin-bottom: 6.25rem;
 }
+.och-section-index-metodo .och-btn {
+  display: none;
+}
 
 @media only screen and (min-width: 1023px) {
   .och-section-index-metodo {
     grid-template-areas: "title title title title title title descr descr descr descr descr descr" ". . . . . . btn btn . . . ." "list list list list list list list list list list list list";
+  }
+  .och-section-index-metodo .och-description {
+    margin-bottom: 3.125rem;
+  }
+  .och-section-index-metodo .och-btn {
+    margin-bottom: 13.5rem;
+    display: flex;
   }
 }
 /* #endregion Metodo */

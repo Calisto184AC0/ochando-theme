@@ -70,14 +70,16 @@ $och-typo: (
             line-height: (36px, 36px),
             font-family: "Open Sans Condensed",
             font-weight: 700,
-            letter-spacing: $och-letter-spacing
+            letter-spacing: $och-letter-spacing,
+            text-align: center
         ),
         enum: (
             font-size: (3rem, 3rem),
             line-height: (36px, 36px),
             font-family: "Open Sans Condensed",
             font-weight: 700,
-            letter-spacing: $och-letter-spacing
+            letter-spacing: $och-letter-spacing,
+            text-align: center
         ),
         description: (
             font-size: (1.125rem, 1.125rem),

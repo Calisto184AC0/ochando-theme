@@ -1,8 +1,8 @@
 # ochando-theme
 
 Para hacer:
-- En la versión desktop, en la sección Método Ochando, que aparezca un botón de enlace y que se muestre una lista de la metodología.
 - Poner las burbujas.
+- En Google Chrome no funciona lo de los pasos en versión mobile
 
 Cosas a tener en cuenta si se modifica:
 

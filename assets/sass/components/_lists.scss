@@ -3,7 +3,7 @@
 .och-list-container {
 
     .och-carousel {
-        margin-bottom: 4.5rem;
+        margin-bottom: 3.125rem;
         display: flex;
 
         .och-list {
@@ -45,6 +45,35 @@
     }
 }
 
+.och-list-extended-container {
+    display: flex;
+    flex-direction: column;
+
+    .och-list-extended {
+        padding: 1rem 0 4.375rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-top: 1px solid var(--och-gray);
+
+        .och-list-enum {
+            margin-bottom: 1.125rem;
+        }
+
+        .och-list-title {
+            margin-bottom: 1.25rem;
+        }
+
+        & > .och-description {
+            margin-bottom: 2.5rem;
+        }
+
+        li.och-description:not(:last-child) {
+            margin-bottom: 1.25rem;
+        }
+    }
+}
+
 @include desktop {
     .och-list-container {
         display: grid;
@@ -60,30 +89,51 @@
         .och-list:nth-of-type(3) { grid-area: l3; }
         .och-list:nth-of-type(4) { grid-area: l4; }
         .och-list:nth-of-type(5) { grid-area: l5; }
-        .och-list:nth-of-type(6) { grid-area: l6; margin-top: 3rem; }
+        .och-list:nth-of-type(6) { grid-area: l6; /* margin-top: 3rem; */ }
 
         .och-list {
             display: grid;
             grid-template-rows: auto 6.25rem 1fr;
             justify-content: center;
+            z-index: 1;
 
             .och-list-enum {
                 justify-self: center;
                 width: 8rem;
                 margin-bottom: 2rem;
-                background-color: var(--och-beige);
+                background-color: var(--och-blue);
 
             }
+
+            .och-list-title { padding: 0 2rem; }
         } 
 
         &::before {
             content: '';
             position: absolute;
-            z-index: -1;
+            z-index: 0;
             height: 1px;
-            width: 100%;
+            width: 90%;
             background-color: var(--och-gray);
             top: 1rem
+        }
+    }
+
+    .och-list-extended-container {
+
+        .och-list-extended {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto 1fr;
+            grid-template-areas: 
+                "enum . . . . . . . . . . ."
+                "title title . . . . .  list list list list list"
+                "desc desc desc desc desc desc . list list list list list ";
+
+            .och-list-enum { grid-area: enum; text-align: left; margin-bottom: 1.125rem; }
+            .och-list-title { grid-area: title; text-align: left; margin-bottom: 1.5625rem; }
+            .och-description { grid-area: desc !important; }
+            .och-list-list { grid-area: list; }
         }
     }
 }

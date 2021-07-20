@@ -50,25 +50,55 @@
 /* #region Metodo */
 
 .och-section-index-metodo {
+    margin: 0 calc(0px - var(--och-lateral-margin));
+    padding: 3.75rem var(--och-lateral-margin) 0;
+
+    background-color: var(--och-blue);
+
     grid-template-areas: 
         "title title title title"
         "descr descr descr descr"
-        "list list list list";
+        "list list list list"
+        "descr2 descr2 descr2 descr2"
+        "btn btn btn .";
 
-    .och-section-title { padding-bottom: 1.5rem; }
-    .och-description { margin-bottom: 6.25rem; }
-    .och-btn { display: none; }
+    .och-section-title {
+        padding-bottom: 1.5rem;
+        font-size: 2.25rem;
+        line-height: 46px;
+    }
+    .och-description { margin-bottom: 4.6875rem; }
+    .och-list-container {
+        margin-bottom: 5.3125rem;
+    }
+    .och-description:nth-of-type(2) {
+        margin-bottom: 3.75rem;
+        grid-area: descr2;
+        font-family: "Libre Baskerville";
+        letter-spacing: -0.025rem;
+        font-size: 1rem;
+    }
+    .och-btn {
+        margin-bottom: 6.5rem; 
+        &:hover {
+            background-color: var(--och-beige);
+        }
+    }
 }
 
 @include desktop {
     .och-section-index-metodo {
         grid-template-areas: 
             "title title title title title title descr descr descr descr descr descr"
-            ". . . . . . btn btn . . . ."
-            "list list list list list list list list list list list list";
+            "list list list list list list list list list list list list"
+            ". . . . . . descr2 descr2 descr2 descr2 descr2 descr2"
+            ". . . . . . btn btn . . . .";
 
         .och-description { margin-bottom: 3.125rem; }
-        .och-btn { margin-bottom: 13.5rem; display: flex; }
+        .och-btn { margin-bottom: 13.5rem; }
+        .och-description:nth-of-type(2) {
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -77,8 +107,8 @@
 /* #region Programas */
 
 .och-section-index-programas {
+    margin-top: 2rem !important;
     grid-template-areas: 
-        "title title title title"
         "card1 card1 card1 card1"
         "card2 card2 card2 card2"
         "card3 card3 card3 card3";
@@ -88,7 +118,6 @@
 @include desktop {
     .och-section-index-programas {
         grid-template-areas: 
-            "title title title title title title title . . . . ."
             "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
     }
 }
@@ -124,6 +153,9 @@
         .och-btn {
             margin-top: 6rem;
             justify-self: center;
+        }
+        .och-card {
+            margin-top: 5.75rem !important;
         }
     }
 }
@@ -244,3 +276,212 @@
 /* #endregion More Info */
 
 /* #endregion ---- Quién soy ---- */
+
+/* #region ---- Programas ---- */
+
+/* #region Init */
+
+.och-section-programas-init {
+    margin-top: 0 !important;
+
+    grid-template-areas: 
+        "title title title title";
+
+
+    .och-title {
+        height: 100vh;
+
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 3.125rem;
+    }
+}
+
+@include desktop {
+    .och-section-programas-init {
+        grid-template-areas: 
+            "title title title title title title title title title title title .";
+        
+        .och-title {
+            height: 70vh;
+        }
+    }
+}
+
+/* #endregion Init */
+
+/* #region Pasos */
+
+.och-section-programas-pasos {
+    grid-template-areas:
+        "list list list list";
+}
+
+@include desktop {
+    .och-section-programas-pasos {
+        grid-template-areas: 
+            "list list list list list list list list list list list list";
+        
+        .och-list-enum {
+            background-color: var(--och-beige) !important;
+        }
+    }
+}
+
+/* #endregion Pasos */
+
+/* #region Texto */
+
+.och-section-programas-text {
+    grid-template-areas: 
+        "descr descr descr descr"
+        "descr2 descr2 descr2 descr2"
+        "descr3 descr3 descr3 descr3";
+
+    .och-programas-description {
+        font-size: 1.5rem;
+        line-height: 36px;
+        letter-spacing: -0.025rem;
+        font-family: "Libre Baskerville";
+        margin-top: 6.25rem;
+        margin-bottom: 6.25rem;
+    }
+
+    .och-description:nth-of-type(2) { grid-area: descr2; }
+    .och-description:nth-of-type(3) { grid-area: descr3; }
+}
+
+@include desktop {
+    .och-section-programas-text {
+        grid-template-areas: 
+            ". . . descr descr descr descr descr descr descr descr descr"
+            ". . . descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2"
+            ". . . descr3 descr3 descr3 descr3 descr3 descr3 descr3 descr3 descr3";
+
+        .och-programas-description {
+            font-size: 2rem;
+            line-height: 46px;
+            margin-top: 4.125rem;
+            margin-bottom: 2.75rem;
+        }
+    }
+}
+
+/* #endregion Texto */
+
+/* #region Extended Pasos */
+
+.och-section-programas-extended-pasos {
+    grid-template-areas: 
+        "title title title title"
+        "exten exten exten exten";
+
+    .och-section-title {
+        margin-bottom: 5rem;
+    }
+    .och-list-extended-container {
+        grid-area: exten;
+    }
+}
+
+@include desktop {
+    .och-section-programas-extended-pasos {
+        grid-template-areas: 
+            "title title title title title title title title title title title title"
+            "exten exten exten exten exten exten exten exten exten exten exten exten";
+
+        .och-section-title {
+            margin-bottom: 7.25rem;
+        }
+    }
+}
+
+/* #endregion Extended Pasos */
+
+/* #region Metodologia */
+
+.och-section-programas-procedimiento {
+    grid-template-areas: 
+        "title title title title"
+        "descr descr descr descr"
+        "descr2 descr2 descr2 descr2"
+        "s1 s1 s1 s1"
+        "s2 s2 s2 s2"
+        "s3 s3 s3 s3"
+        "s4 s4 s4 s4"
+        "s5 s5 s5 s5"
+        "s6 s6 s6 s6"
+        "s7 s7 s7 s7";
+
+    .och-section-title { margin-bottom: 3.125rem; }
+    .och-description:nth-of-type(2) {
+        margin-top: 2.5rem;
+        margin-bottom: 4.25rem;
+    }
+    
+    .och-btn {
+        margin-bottom: 1.875rem;
+        letter-spacing: -0.025rem;
+        font-family: "Libre Baskerville";
+    }
+
+    .och-btn:nth-of-type(1) { grid-area: s1; }
+    .och-btn:nth-of-type(2) { grid-area: s2; }
+    .och-btn:nth-of-type(3) { grid-area: s3; }
+    .och-btn:nth-of-type(4) { grid-area: s4; }
+    .och-btn:nth-of-type(5) { grid-area: s5; }
+    .och-btn:nth-of-type(6) { grid-area: s6; }
+    .och-btn:nth-of-type(7) { grid-area: s7; }
+}
+
+@include desktop {
+    .och-section-programas-procedimiento {
+        grid-template-areas: 
+            "title title title title title title title title title title title title"
+            ". . . descr descr descr descr descr descr descr descr ."
+            ". . . descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 ."
+            ". s1 s1 s1 s1 s1 s1 s1 s1 s1 s1 ."
+            ". s2 s2 s2 s2 s2 s2 s2 s2 s2 s2 ."
+            ". s3 s3 s3 s3 s3 s3 s3 s3 s3 s3 ."
+            ". s4 s4 s4 s4 s4 s4 s4 s4 s4 s4 ."
+            ". s5 s5 s5 s5 s5 s5 s5 s5 s5 s5 ."
+            ". s6 s6 s6 s6 s6 s6 s6 s6 s6 s6 ."
+            ". s7 s7 s7 s7 s7 s7 s7 s7 s7 s7 .";
+
+        .och-section-title { margin-bottom: 6.625rem; }
+        .och-description:nth-of-type(2) {
+            margin-top: 4.25rem;
+            margin-bottom: 6.25rem;
+        }
+    }
+}
+
+/* #endregion Metodologia */
+
+/* #region Slogan */
+
+.och-section-programas-slogan {
+    grid-template-areas: 
+        "title title title title";
+
+    .och-section-title {
+        font-size: 1.5rem !important;
+        line-height: 36px;
+    }
+}
+
+@include desktop {
+    .och-section-programas-slogan {
+        grid-template-areas: 
+            "title title title title title title title title title title title title";
+    
+        .och-section-title {
+            font-size: 2.5rem !important;
+            line-height: 54px;
+        }
+    }
+}
+
+/* #endregion Slogan */
+
+/* #endregion ---- Programas ---- */

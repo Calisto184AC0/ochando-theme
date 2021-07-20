@@ -15,3 +15,28 @@
         background-color: var(--och-green);
     }
 }
+
+.och-btn-red {
+    background-color: var(--och-red); border: 1px solid var(--och-red);
+
+    &:hover {
+        cursor: auto;
+        background-color: var(--och-red); border: 1px solid var(--och-red);
+    } 
+}
+.och-btn-green {
+    background-color: var(--och-green); border: 1px solid var(--och-green);
+
+    &:hover {
+        cursor: auto;
+        background-color: var(--och-green); border: 1px solid var(--och-green);
+    } 
+}
+.och-btn-blue {
+    background-color: var(--och-blue); border: 1px solid var(--och-blue);
+
+    &:hover {
+        cursor: auto;
+        background-color: var(--och-blue); border: 1px solid var(--och-blue);
+    } 
+}

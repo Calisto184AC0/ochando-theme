@@ -10,6 +10,13 @@
     left: var(--och-lateral-margin);
     right: var(--och-lateral-margin);
 
+    .och-header-links-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .och-btn { display: none; }
+
     .och-header-menu-icon {
         position: absolute;
         z-index: 2;
@@ -68,8 +75,14 @@
 }
 
 @include desktop {
-    .och-header .och-nav {
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-areas: ". . . . . . . . bg menu menu menu";
+    .och-header {
+        .och-nav {
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-areas: ". . . . . . . . bg menu menu menu";
+        }
+        .och-btn {
+            display: flex;
+            margin-right: 4rem;
+        }
     }
 }

@@ -17,6 +17,7 @@
         .och-title, .och-section-title { grid-area: title; }
 
         .och-description { grid-area: descr; }
+        .och-description:nth-of-type(2) { grid-area: descr2 !important; }
 
         .och-img { grid-area: img; }
 

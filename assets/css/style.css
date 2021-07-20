@@ -370,6 +370,75 @@ input, button, textarea, select {
     letter-spacing: -0.025rem;
   }
 }
+.och-blob {
+  position: absolute;
+  z-index: -2;
+}
+
+#och-blob-1 {
+  z-index: -1 !important;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+#och-blob-2 {
+  width: 558.27px;
+  height: auto;
+  top: 214px;
+  left: -320px;
+}
+
+#och-blob-3 {
+  width: 511.51px;
+  height: auto;
+  top: 117px;
+  right: -320px;
+}
+
+#och-blob-4 {
+  width: 428.67px;
+  height: auto;
+  top: 1482px;
+  left: -221px;
+  transform: rotateZ(-130deg);
+}
+
+#och-blob-5 {
+  width: 468.43px;
+  height: auto;
+  top: -180px;
+  left: 155px;
+  transform: rotateZ(-32deg);
+}
+
+@media only screen and (min-width: 1023px) {
+  #och-blob-2 {
+    width: auto;
+    top: 15rem;
+    left: -9rem;
+  }
+
+  #och-blob-3 {
+    width: auto;
+    top: 2.75rem;
+    right: 7.25rem;
+  }
+
+  #och-blob-4 {
+    width: auto;
+    top: -207px;
+    left: -70px;
+    transform: rotateZ(-106deg);
+  }
+
+  #och-blob-5 {
+    width: auto;
+    top: -246px;
+    left: 80px;
+  }
+}
 .och-btn {
   padding: 1.5rem;
   border: 1px solid var(--och-gray);
@@ -383,6 +452,36 @@ input, button, textarea, select {
   cursor: pointer;
   border: 1px solid var(--och-green);
   background-color: var(--och-green);
+}
+
+.och-btn-red {
+  background-color: var(--och-red);
+  border: 1px solid var(--och-red);
+}
+.och-btn-red:hover {
+  cursor: auto;
+  background-color: var(--och-red);
+  border: 1px solid var(--och-red);
+}
+
+.och-btn-green {
+  background-color: var(--och-green);
+  border: 1px solid var(--och-green);
+}
+.och-btn-green:hover {
+  cursor: auto;
+  background-color: var(--och-green);
+  border: 1px solid var(--och-green);
+}
+
+.och-btn-blue {
+  background-color: var(--och-blue);
+  border: 1px solid var(--och-blue);
+}
+.och-btn-blue:hover {
+  cursor: auto;
+  background-color: var(--och-blue);
+  border: 1px solid var(--och-blue);
 }
 
 .och-section-index-programas .och-card {
@@ -421,21 +520,6 @@ input, button, textarea, select {
 .och-section-quiensoy-info .och-card .och-card-description {
   margin-bottom: 3.25rem;
 }
-.och-section-quiensoy-info .och-card:nth-of-type(3) {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  column-gap: var(--och-column-gap);
-  grid-template-areas: "title title title title" "descr descr descr descr" "btn   btn   btn   .";
-}
-.och-section-quiensoy-info .och-card:nth-of-type(3) .och-card-title {
-  grid-area: title;
-}
-.och-section-quiensoy-info .och-card:nth-of-type(3) .och-card-description {
-  grid-area: descr;
-}
-.och-section-quiensoy-info .och-card:nth-of-type(3) .och-btn {
-  grid-area: btn;
-}
 
 @media only screen and (min-width: 1023px) {
   .och-section-quiensoy-info .och-card {
@@ -457,7 +541,7 @@ input, button, textarea, select {
 }
 
 .och-list-container .och-carousel {
-  margin-bottom: 4.5rem;
+  margin-bottom: 3.125rem;
   display: flex;
 }
 .och-list-container .och-carousel .och-list {
@@ -495,6 +579,30 @@ input, button, textarea, select {
   margin-right: var(--och-column-gap);
 }
 
+.och-list-extended-container {
+  display: flex;
+  flex-direction: column;
+}
+.och-list-extended-container .och-list-extended {
+  padding: 1rem 0 4.375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid var(--och-gray);
+}
+.och-list-extended-container .och-list-extended .och-list-enum {
+  margin-bottom: 1.125rem;
+}
+.och-list-extended-container .och-list-extended .och-list-title {
+  margin-bottom: 1.25rem;
+}
+.och-list-extended-container .och-list-extended > .och-description {
+  margin-bottom: 2.5rem;
+}
+.och-list-extended-container .och-list-extended li.och-description:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
 @media only screen and (min-width: 1023px) {
   .och-list-container {
     display: grid;
@@ -520,27 +628,54 @@ input, button, textarea, select {
   }
   .och-list-container .och-list:nth-of-type(6) {
     grid-area: l6;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
   }
   .och-list-container .och-list {
     display: grid;
     grid-template-rows: auto 6.25rem 1fr;
     justify-content: center;
+    z-index: 1;
   }
   .och-list-container .och-list .och-list-enum {
     justify-self: center;
     width: 8rem;
     margin-bottom: 2rem;
-    background-color: var(--och-beige);
+    background-color: var(--och-blue);
+  }
+  .och-list-container .och-list .och-list-title {
+    padding: 0 2rem;
   }
   .och-list-container::before {
     content: "";
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     height: 1px;
-    width: 100%;
+    width: 90%;
     background-color: var(--och-gray);
     top: 1rem;
+  }
+
+  .och-list-extended-container .och-list-extended {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: "enum . . . . . . . . . . ." "title title . . . . .  list list list list list" "desc desc desc desc desc desc . list list list list list ";
+  }
+  .och-list-extended-container .och-list-extended .och-list-enum {
+    grid-area: enum;
+    text-align: left;
+    margin-bottom: 1.125rem;
+  }
+  .och-list-extended-container .och-list-extended .och-list-title {
+    grid-area: title;
+    text-align: left;
+    margin-bottom: 1.5625rem;
+  }
+  .och-list-extended-container .och-list-extended .och-description {
+    grid-area: desc !important;
+  }
+  .och-list-extended-container .och-list-extended .och-list-list {
+    grid-area: list;
   }
 }
 .och-img {
@@ -615,6 +750,7 @@ input, button, textarea, select {
   border-top: 1px solid var(--och-gray);
   border-right: 1px solid var(--och-gray);
   margin-top: 3.75rem;
+  position: relative;
   display: grid;
   column-gap: var(--och-column-gap);
   grid-template-columns: repeat(4, 1fr);
@@ -655,6 +791,7 @@ input, button, textarea, select {
   background-color: var(--och-green);
 }
 .och-form .och-input {
+  background-color: transparent;
   padding: 1.4375rem 1.625rem 1.6875rem;
   border: 1px solid var(--och-gray);
   border-radius: 5px;
@@ -701,6 +838,13 @@ input, button, textarea, select {
   top: var(--och-padding-top-header);
   left: var(--och-lateral-margin);
   right: var(--och-lateral-margin);
+}
+.och-header .och-header-links-container {
+  display: flex;
+  align-items: center;
+}
+.och-header .och-btn {
+  display: none;
 }
 .och-header .och-header-menu-icon {
   position: absolute;
@@ -750,6 +894,10 @@ input, button, textarea, select {
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas: ". . . . . . . . bg menu menu menu";
   }
+  .och-header .och-btn {
+    display: flex;
+    margin-right: 4rem;
+  }
 }
 .och-container {
   padding: 0 var(--och-lateral-margin);
@@ -769,6 +917,9 @@ input, button, textarea, select {
 }
 .och-container .och-section .och-description {
   grid-area: descr;
+}
+.och-container .och-section .och-description:nth-of-type(2) {
+  grid-area: descr2 !important;
 }
 .och-container .och-section .och-img {
   grid-area: img;
@@ -831,40 +982,61 @@ input, button, textarea, select {
 /* #endregion Index */
 /* #region Metodo */
 .och-section-index-metodo {
-  grid-template-areas: "title title title title" "descr descr descr descr" "list list list list";
+  margin: 0 calc(0px - var(--och-lateral-margin));
+  padding: 3.75rem var(--och-lateral-margin) 0;
+  background-color: var(--och-blue);
+  grid-template-areas: "title title title title" "descr descr descr descr" "list list list list" "descr2 descr2 descr2 descr2" "btn btn btn .";
 }
 .och-section-index-metodo .och-section-title {
   padding-bottom: 1.5rem;
+  font-size: 2.25rem;
+  line-height: 46px;
 }
 .och-section-index-metodo .och-description {
-  margin-bottom: 6.25rem;
+  margin-bottom: 4.6875rem;
+}
+.och-section-index-metodo .och-list-container {
+  margin-bottom: 5.3125rem;
+}
+.och-section-index-metodo .och-description:nth-of-type(2) {
+  margin-bottom: 3.75rem;
+  grid-area: descr2;
+  font-family: "Libre Baskerville";
+  letter-spacing: -0.025rem;
+  font-size: 1rem;
 }
 .och-section-index-metodo .och-btn {
-  display: none;
+  margin-bottom: 6.5rem;
+}
+.och-section-index-metodo .och-btn:hover {
+  background-color: var(--och-beige);
 }
 
 @media only screen and (min-width: 1023px) {
   .och-section-index-metodo {
-    grid-template-areas: "title title title title title title descr descr descr descr descr descr" ". . . . . . btn btn . . . ." "list list list list list list list list list list list list";
+    grid-template-areas: "title title title title title title descr descr descr descr descr descr" "list list list list list list list list list list list list" ". . . . . . descr2 descr2 descr2 descr2 descr2 descr2" ". . . . . . btn btn . . . .";
   }
   .och-section-index-metodo .och-description {
     margin-bottom: 3.125rem;
   }
   .och-section-index-metodo .och-btn {
     margin-bottom: 13.5rem;
-    display: flex;
+  }
+  .och-section-index-metodo .och-description:nth-of-type(2) {
+    font-size: 1.5rem;
   }
 }
 /* #endregion Metodo */
 /* #region Programas */
 .och-section-index-programas {
-  grid-template-areas: "title title title title" "card1 card1 card1 card1" "card2 card2 card2 card2" "card3 card3 card3 card3";
+  margin-top: 2rem !important;
+  grid-template-areas: "card1 card1 card1 card1" "card2 card2 card2 card2" "card3 card3 card3 card3";
   row-gap: 3.125rem;
 }
 
 @media only screen and (min-width: 1023px) {
   .och-section-index-programas {
-    grid-template-areas: "title title title title title title title . . . . ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
+    grid-template-areas: "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
   }
 }
 /* #endregion Programas */
@@ -890,6 +1062,9 @@ input, button, textarea, select {
   .och-section-index-articulos .och-btn {
     margin-top: 6rem;
     justify-self: center;
+  }
+  .och-section-index-articulos .och-card {
+    margin-top: 5.75rem !important;
   }
 }
 /* #endregion Artículos */
@@ -977,5 +1152,163 @@ input, button, textarea, select {
 }
 /* #endregion More Info */
 /* #endregion ---- Quién soy ---- */
+/* #region ---- Programas ---- */
+/* #region Init */
+.och-section-programas-init {
+  margin-top: 0 !important;
+  grid-template-areas: "title title title title";
+}
+.och-section-programas-init .och-title {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 3.125rem;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-programas-init {
+    grid-template-areas: "title title title title title title title title title title title .";
+  }
+  .och-section-programas-init .och-title {
+    height: 70vh;
+  }
+}
+/* #endregion Init */
+/* #region Pasos */
+.och-section-programas-pasos {
+  grid-template-areas: "list list list list";
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-programas-pasos {
+    grid-template-areas: "list list list list list list list list list list list list";
+  }
+  .och-section-programas-pasos .och-list-enum {
+    background-color: var(--och-beige) !important;
+  }
+}
+/* #endregion Pasos */
+/* #region Texto */
+.och-section-programas-text {
+  grid-template-areas: "descr descr descr descr" "descr2 descr2 descr2 descr2" "descr3 descr3 descr3 descr3";
+}
+.och-section-programas-text .och-programas-description {
+  font-size: 1.5rem;
+  line-height: 36px;
+  letter-spacing: -0.025rem;
+  font-family: "Libre Baskerville";
+  margin-top: 6.25rem;
+  margin-bottom: 6.25rem;
+}
+.och-section-programas-text .och-description:nth-of-type(2) {
+  grid-area: descr2;
+}
+.och-section-programas-text .och-description:nth-of-type(3) {
+  grid-area: descr3;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-programas-text {
+    grid-template-areas: ". . . descr descr descr descr descr descr descr descr descr" ". . . descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2" ". . . descr3 descr3 descr3 descr3 descr3 descr3 descr3 descr3 descr3";
+  }
+  .och-section-programas-text .och-programas-description {
+    font-size: 2rem;
+    line-height: 46px;
+    margin-top: 4.125rem;
+    margin-bottom: 2.75rem;
+  }
+}
+/* #endregion Texto */
+/* #region Extended Pasos */
+.och-section-programas-extended-pasos {
+  grid-template-areas: "title title title title" "exten exten exten exten";
+}
+.och-section-programas-extended-pasos .och-section-title {
+  margin-bottom: 5rem;
+}
+.och-section-programas-extended-pasos .och-list-extended-container {
+  grid-area: exten;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-programas-extended-pasos {
+    grid-template-areas: "title title title title title title title title title title title title" "exten exten exten exten exten exten exten exten exten exten exten exten";
+  }
+  .och-section-programas-extended-pasos .och-section-title {
+    margin-bottom: 7.25rem;
+  }
+}
+/* #endregion Extended Pasos */
+/* #region Metodologia */
+.och-section-programas-procedimiento {
+  grid-template-areas: "title title title title" "descr descr descr descr" "descr2 descr2 descr2 descr2" "s1 s1 s1 s1" "s2 s2 s2 s2" "s3 s3 s3 s3" "s4 s4 s4 s4" "s5 s5 s5 s5" "s6 s6 s6 s6" "s7 s7 s7 s7";
+}
+.och-section-programas-procedimiento .och-section-title {
+  margin-bottom: 3.125rem;
+}
+.och-section-programas-procedimiento .och-description:nth-of-type(2) {
+  margin-top: 2.5rem;
+  margin-bottom: 4.25rem;
+}
+.och-section-programas-procedimiento .och-btn {
+  margin-bottom: 1.875rem;
+  letter-spacing: -0.025rem;
+  font-family: "Libre Baskerville";
+}
+.och-section-programas-procedimiento .och-btn:nth-of-type(1) {
+  grid-area: s1;
+}
+.och-section-programas-procedimiento .och-btn:nth-of-type(2) {
+  grid-area: s2;
+}
+.och-section-programas-procedimiento .och-btn:nth-of-type(3) {
+  grid-area: s3;
+}
+.och-section-programas-procedimiento .och-btn:nth-of-type(4) {
+  grid-area: s4;
+}
+.och-section-programas-procedimiento .och-btn:nth-of-type(5) {
+  grid-area: s5;
+}
+.och-section-programas-procedimiento .och-btn:nth-of-type(6) {
+  grid-area: s6;
+}
+.och-section-programas-procedimiento .och-btn:nth-of-type(7) {
+  grid-area: s7;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-programas-procedimiento {
+    grid-template-areas: "title title title title title title title title title title title title" ". . . descr descr descr descr descr descr descr descr ." ". . . descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 ." ". s1 s1 s1 s1 s1 s1 s1 s1 s1 s1 ." ". s2 s2 s2 s2 s2 s2 s2 s2 s2 s2 ." ". s3 s3 s3 s3 s3 s3 s3 s3 s3 s3 ." ". s4 s4 s4 s4 s4 s4 s4 s4 s4 s4 ." ". s5 s5 s5 s5 s5 s5 s5 s5 s5 s5 ." ". s6 s6 s6 s6 s6 s6 s6 s6 s6 s6 ." ". s7 s7 s7 s7 s7 s7 s7 s7 s7 s7 .";
+  }
+  .och-section-programas-procedimiento .och-section-title {
+    margin-bottom: 6.625rem;
+  }
+  .och-section-programas-procedimiento .och-description:nth-of-type(2) {
+    margin-top: 4.25rem;
+    margin-bottom: 6.25rem;
+  }
+}
+/* #endregion Metodologia */
+/* #region Slogan */
+.och-section-programas-slogan {
+  grid-template-areas: "title title title title";
+}
+.och-section-programas-slogan .och-section-title {
+  font-size: 1.5rem !important;
+  line-height: 36px;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-programas-slogan {
+    grid-template-areas: "title title title title title title title title title title title title";
+  }
+  .och-section-programas-slogan .och-section-title {
+    font-size: 2.5rem !important;
+    line-height: 54px;
+  }
+}
+/* #endregion Slogan */
+/* #endregion ---- Programas ---- */
 
 /*# sourceMappingURL=style.css.map */

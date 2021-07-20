@@ -6,6 +6,8 @@
     border-right: 1px solid var(--och-gray);
     margin-top: 3.75rem;
 
+    position: relative;
+
     display: grid; 
     column-gap: var(--och-column-gap);
     grid-template-columns: repeat(4, 1fr);
@@ -41,6 +43,7 @@
     }
 
     .och-input {
+        background-color: transparent;
         padding: 1.4375rem 1.625rem 1.6875rem;
         border: 1px solid var(--och-gray);
         border-radius: 5px;

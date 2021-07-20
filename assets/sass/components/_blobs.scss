@@ -1,0 +1,73 @@
+@use '../abstracts' as *;
+
+.och-blob {
+    position: absolute;
+    z-index: -2;
+}
+
+#och-blob-1 {   // Es la burbuja que se muestra en la versión desktop el paso final de la metodologia en el inicio
+    z-index: -1 !important;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#och-blob-2 {
+    width: 558.27px;
+    height: auto;
+    top: 214px;
+    left: -320px;
+}
+
+#och-blob-3 {
+    width: 511.51px;
+    height: auto;
+    top: 117px;
+    right: -320px;
+}
+
+#och-blob-4 {
+    width: 428.67px;
+    height: auto;
+    top: 1482px;
+    left: -221px;
+    transform: rotateZ(-130deg);
+}
+
+#och-blob-5 {
+    width: 468.43px;
+    height: auto;
+    top: -180px;
+    left: 155px;
+    transform: rotateZ(-32deg);
+}
+
+@include desktop {
+    #och-blob-2 {
+        width: auto;
+        top: 15rem;
+        left: -9rem;
+    }
+    
+    #och-blob-3 {
+        width: auto;
+        top: 2.75rem;
+        right: 7.25rem;
+    }
+
+    #och-blob-4 {
+        width: auto;
+        top: -207px;
+        left: -70px;
+        transform: rotateZ(-106deg);
+        
+    }
+
+    #och-blob-5 {
+        width: auto;
+        top: -246px;
+        left: 80px;
+    }
+}
+

@@ -11,6 +11,7 @@ let mobileFunctions = new Array()   // De este modo cuando se quiera ejecutar un
 // Elementos del DOM
 let carousel = document.getElementsByClassName('och-carousel')[0]
 let carouselController = document.getElementsByClassName('och-list-controller-container')[0]
+let imgSVG = document.getElementById('och-blob-1')
 
 // Funciones
 let InitProgram = () => { window.innerWidth > DESKTOP_SIZE ? ExecDesktopFunctions() : ExecMobileFunctions() }
@@ -82,7 +83,7 @@ let ConfigPasosMobile = () => {
         }
     }
 }
-if (carousel !== null) mobileFunctions.push(ConfigPasosMobile)
+if (carousel !== undefined) mobileFunctions.push(ConfigPasosMobile)
 
 let ConfigPasosDesktop = () => {
     let list = [...document.getElementsByClassName('och-list')]
@@ -93,17 +94,21 @@ let ConfigPasosDesktop = () => {
     // crear el elemento que falta
     let newElem = document.createElement('div')
     newElem.className = 'och-list'
+
     let newText = document.createElement('h3')
     newText.textContent = 'MODELO DE BIENESTAR'
     newText.className = 'och-list-title'
+    newText.style.position = 'relative'
+    newText.style.zIndex = '0'
 
     newElem.appendChild(newText)
+    newText.appendChild(imgSVG)
     carousel.parentElement.appendChild(newElem)
 
     carousel.remove()
     carouselController.remove()
 }
-if (carousel !== null) desktopFunctions.push(ConfigPasosDesktop)
+if (carousel !== undefined) desktopFunctions.push(ConfigPasosDesktop)
 
 InitProgram()
 window.onresize = () => { InitProgram() }

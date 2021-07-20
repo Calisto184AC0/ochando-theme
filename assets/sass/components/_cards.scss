@@ -28,20 +28,6 @@
 
     .och-card-title { margin-bottom: 2.25rem; }
     .och-card-description { margin-bottom: 3.25rem; }
-    
-    &:nth-of-type(3) {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: var(--och-column-gap);
-        grid-template-areas: 
-            "title title title title"
-            "descr descr descr descr"
-            "btn   btn   btn   .";
-        
-        .och-card-title { grid-area: title; }
-        .och-card-description { grid-area: descr; }
-        .och-btn { grid-area: btn; }
-    }
 }
 
 @include desktop {

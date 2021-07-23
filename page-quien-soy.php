@@ -9,13 +9,13 @@
                 <section class="och-section och-section-quiensoy-init">
                     <h1 class="och-title"><?php the_sub_field('titulo'); ?></h1>
                     <img src="<?php echo esc_url(get_sub_field('imagen')['url']); ?>" alt="" class="och-img">
-                    <p class="och-description"><?php the_sub_field('descripcion'); ?></p>
+                    <p class="och-description"><?php the_sub_field_without_p_tags('descripcion'); ?></p>
                 </section>
 
             <?php elseif (get_row_layout() == 'quiensoy_info') : ?>
 
                 <section class="och-section och-section-quiensoy-info">
-                    <p class="och-section-title"><?php the_sub_field('descripcion'); ?></p>
+                    <p class="och-section-title"><?php the_sub_field_without_p_tags('descripcion'); ?></p>
 
                     <?php while( have_rows('info') ): the_row(); ?>
 
@@ -35,7 +35,7 @@
 
                 <section class="och-section och-section-quiensoy-more">
                     <h2 class="och-section-title"><?php the_sub_field('titulo'); ?></h2>
-                    <p class="och-description"><?php the_sub_field('descripcion'); ?></p>
+                    <p class="och-description"><?php the_sub_field_without_p_tags('descripcion'); ?></p>
                 </section>
 
             <?php endif; ?>

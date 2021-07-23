@@ -206,7 +206,6 @@ input, button, textarea, select {
 .och-card-description {
   font-size: 0.9375rem;
   line-height: 24px;
-  color: var(--och-gray);
 }
 
 .och-list-title {
@@ -308,7 +307,6 @@ input, button, textarea, select {
   .och-card-description {
     font-size: 1.0625rem;
     line-height: 27px;
-    color: var(--och-gray);
   }
 
   .och-list-title {
@@ -522,6 +520,13 @@ input, button, textarea, select {
 }
 
 @media only screen and (min-width: 1023px) {
+  .och-section-index-programas .och-card {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    align-items: flex-end;
+    grid-template-areas: "title" "descr" "btn";
+  }
+
   .och-section-quiensoy-info .och-card {
     padding-right: 2.25rem;
     border-top: 0;
@@ -970,7 +975,7 @@ input, button, textarea, select {
 
 @media only screen and (min-width: 1023px) {
   .och-section-index-init {
-    grid-template-areas: "title title title title title title title . . . . ." "img img img img img . descr descr descr descr descr descr" "img img img img img . btn btn . . . .";
+    grid-template-areas: "title title title title title title title title . . . ." "img img img img img . descr descr descr descr descr descr" "img img img img img . btn btn . . . .";
   }
   .och-section-index-init .och-title {
     height: 70vh;
@@ -993,7 +998,7 @@ input, button, textarea, select {
   line-height: 46px;
 }
 .och-section-index-metodo .och-description {
-  margin-bottom: 4.6875rem;
+  margin-bottom: 4.6875rem !important;
 }
 .och-section-index-metodo .och-list-container {
   margin-bottom: 5.3125rem;
@@ -1006,7 +1011,7 @@ input, button, textarea, select {
   font-size: 1rem;
 }
 .och-section-index-metodo .och-btn {
-  margin-bottom: 6.5rem;
+  margin-bottom: 6.5rem !important;
 }
 .och-section-index-metodo .och-btn:hover {
   background-color: var(--och-beige);
@@ -1036,6 +1041,7 @@ input, button, textarea, select {
 
 @media only screen and (min-width: 1023px) {
   .och-section-index-programas {
+    align-items: stretch !important;
     grid-template-areas: "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
   }
 }

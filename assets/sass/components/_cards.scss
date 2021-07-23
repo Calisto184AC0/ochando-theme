@@ -31,6 +31,13 @@
 }
 
 @include desktop {
+    .och-section-index-programas .och-card {
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        align-items: flex-end;
+        grid-template-areas: "title" "descr" "btn";
+    }
+
     .och-section-quiensoy-info .och-card {
         padding-right: 2.25rem;
         border-top: 0;

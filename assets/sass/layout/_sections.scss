@@ -31,7 +31,7 @@
     .och-section-index-init {
 
         grid-template-areas: 
-            "title title title title title title title . . . . ."
+            "title title title title title title title title . . . ."
             "img img img img img . descr descr descr descr descr descr"
             "img img img img img . btn btn . . . .";
 
@@ -67,7 +67,7 @@
         font-size: 2.25rem;
         line-height: 46px;
     }
-    .och-description { margin-bottom: 4.6875rem; }
+    .och-description { margin-bottom: 4.6875rem !important; }
     .och-list-container {
         margin-bottom: 5.3125rem;
     }
@@ -79,7 +79,7 @@
         font-size: 1rem;
     }
     .och-btn {
-        margin-bottom: 6.5rem; 
+        margin-bottom: 6.5rem !important; 
         &:hover {
             background-color: var(--och-beige);
         }
@@ -117,6 +117,7 @@
 
 @include desktop {
     .och-section-index-programas {
+        align-items: stretch !important;
         grid-template-areas: 
             "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
     }

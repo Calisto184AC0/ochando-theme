@@ -35,12 +35,18 @@ let ExecMobileFunctions = () => {
 let ConfigMenu = () => { // Abrir y cerrar el menu pulsando un icono
     let menuIcon = document.getElementsByClassName('och-header-menu-icon')[0]
     let menu = document.getElementsByClassName('och-nav')[0]
-    menuIcon.onclick = () => {
-        if (menu.style.transform === "" || menu.style.transform === 'translateX(100%)') {
-            menu.style.transform = 'translateX(0%)'
-            if (window.innerWidth < DESKTOP_SIZE) { document.body.style.overflow = 'hidden' }
+    document.onclick = (e) => {
+        if (e.target.className === menuIcon.className) {
+            if (menu.style.transform === "" || menu.style.transform === 'translateX(100%)') {
+                menu.style.transform = 'translateX(0%)'
+                if (window.innerWidth < DESKTOP_SIZE) { document.body.style.overflow = 'hidden' }
+            }
+            else {
+                menu.style.transform = 'translateX(100%)'
+                document.body.style.overflow = ''
+            }   
         }
-        else {
+        else if (e.clientX < document.getElementsByClassName('och-header-menu')[0].getBoundingClientRect().left - 130 && menu.style.transform === 'translateX(0%)') {
             menu.style.transform = 'translateX(100%)'
             document.body.style.overflow = ''
         }
@@ -72,14 +78,20 @@ let ConfigPasosMobile = () => {
     listController[0].onclick = () => { // Izquierda
         if (contPasos < 0) {
             contPasos++
-            carousel.style.transform = 'translate(' + contPasos * 20 + '%)'
+            if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
+                carousel.style.transform = 'translate(' + contPasos * 20 + '%)'
+            else 
+                carousel.style.transform = 'translate(' + contPasos * window.outerWidth + 'px)'
         }
     }
 
     listController[1].onclick = () => { // Derecha
         if (contPasos > -4) {
             contPasos--
-            carousel.style.transform = 'translate(' + contPasos * 20 + '%)'
+            if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
+                carousel.style.transform = 'translate(' + contPasos * 20 + '%)'
+            else
+                carousel.style.transform = 'translate(' + contPasos * window.outerWidth + 'px)'
         }
     }
 }

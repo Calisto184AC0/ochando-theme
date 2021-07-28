@@ -379,6 +379,7 @@ input, button, textarea, select {
   right: 0;
   left: 0;
   transform: translateY(-50%);
+  display: none;
 }
 
 #och-blob-2 {
@@ -411,7 +412,45 @@ input, button, textarea, select {
   transform: rotateZ(-32deg);
 }
 
+#och-blob-6 {
+  display: none;
+}
+
+#och-blob-7 {
+  width: 428.67px;
+  height: auto;
+  top: 70px;
+  left: 200px;
+  transform: rotateZ(-7deg);
+}
+
+#och-blob-8 {
+  width: 428.67px;
+  height: auto;
+  top: 300px;
+  left: -150px;
+}
+
+#och-blob-9 {
+  width: 428.67px;
+  height: auto;
+  top: 100px;
+  left: 200px;
+  transform: rotateZ(90deg);
+}
+
+#och-blob-10 {
+  width: 428.67px;
+  height: auto;
+  top: 250px;
+  left: -150px;
+}
+
 @media only screen and (min-width: 1023px) {
+  #och-blob-1 {
+    display: block;
+  }
+
   #och-blob-2 {
     width: auto;
     top: 15rem;
@@ -435,6 +474,37 @@ input, button, textarea, select {
     width: auto;
     top: -246px;
     left: 80px;
+  }
+
+  #och-blob-6 {
+    display: block;
+    width: auto;
+    top: -220px;
+    left: -300px;
+  }
+
+  #och-blob-7 {
+    width: auto;
+    top: -500px;
+    left: 400px;
+  }
+
+  #och-blob-8 {
+    width: auto;
+    top: -120px;
+    left: -500px;
+  }
+
+  #och-blob-9 {
+    width: auto;
+    top: -600px;
+    left: 400px;
+  }
+
+  #och-blob-10 {
+    width: auto;
+    top: 300px;
+    left: -200px;
   }
 }
 .och-btn {
@@ -604,8 +674,14 @@ input, button, textarea, select {
 .och-list-extended-container .och-list-extended > .och-description {
   margin-bottom: 2.5rem;
 }
-.och-list-extended-container .och-list-extended li.och-description:not(:last-child) {
+.och-list-extended-container .och-list-extended li:not(:last-child) {
   margin-bottom: 1.25rem;
+}
+.och-list-extended-container .och-list-extended li {
+  font-size: 0.9375rem;
+  line-height: 24px;
+  font-family: "Open Sans";
+  font-weight: 400;
 }
 
 @media only screen and (min-width: 1023px) {
@@ -661,10 +737,11 @@ input, button, textarea, select {
   }
 
   .och-list-extended-container .och-list-extended {
+    padding: 2rem 0 4.375rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto 1fr;
-    grid-template-areas: "enum . . . . . . . . . . ." "title title . . . . .  list list list list list" "desc desc desc desc desc desc . list list list list list ";
+    grid-template-areas: "enum . . . . . . . . . . ." "title title . . . . .  list list list list ." "desc desc desc desc desc desc . list list list list . ";
   }
   .och-list-extended-container .och-list-extended .och-list-enum {
     grid-area: enum;
@@ -679,8 +756,14 @@ input, button, textarea, select {
   .och-list-extended-container .och-list-extended .och-description {
     grid-area: desc !important;
   }
-  .och-list-extended-container .och-list-extended .och-list-list {
+  .och-list-extended-container .och-list-extended ul {
     grid-area: list;
+  }
+  .och-list-extended-container .och-list-extended ul li {
+    font-size: 1.3125rem;
+    line-height: 34px;
+    font-family: "Open Sans";
+    font-weight: 400;
   }
 }
 .och-img {
@@ -840,6 +923,7 @@ input, button, textarea, select {
   justify-content: space-between;
   align-items: center;
   position: absolute;
+  z-index: 5;
   top: var(--och-padding-top-header);
   left: var(--och-lateral-margin);
   right: var(--och-lateral-margin);
@@ -853,7 +937,7 @@ input, button, textarea, select {
 }
 .och-header .och-header-menu-icon {
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   right: 0;
   cursor: pointer;
 }
@@ -864,7 +948,7 @@ input, button, textarea, select {
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "bg menu menu menu";
   position: absolute;
-  z-index: 1;
+  z-index: 4;
   top: calc(0px - var(--och-padding-top-header));
   left: 0;
   right: calc(0px - var(--och-lateral-margin));
@@ -880,8 +964,14 @@ input, button, textarea, select {
   z-index: 2;
 }
 .och-header .och-nav .och-header-menu * {
-  padding-bottom: 1.25rem;
   color: var(--och-black);
+}
+.och-header .och-nav .och-header-menu a {
+  display: inline-block;
+  padding-bottom: 1.25rem;
+}
+.och-header .och-nav .och-header-menu ul {
+  margin-left: 2rem;
 }
 .och-header .och-nav::after {
   content: "";
@@ -908,6 +998,7 @@ input, button, textarea, select {
   padding: 0 var(--och-lateral-margin);
 }
 .och-container .och-section {
+  position: relative;
   max-width: 100vw;
   margin-top: 3.125rem;
   padding-bottom: 3.125rem;
@@ -1167,7 +1258,9 @@ input, button, textarea, select {
 .och-section-programas-init .och-title {
   height: 100vh;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
   padding-bottom: 3.125rem;
 }
 

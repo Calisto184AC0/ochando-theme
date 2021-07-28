@@ -68,8 +68,15 @@
             margin-bottom: 2.5rem;
         }
 
-        li.och-description:not(:last-child) {
+        li:not(:last-child) {
             margin-bottom: 1.25rem;
+        }
+
+        li {
+            font-size: 0.9375rem;
+            line-height: 24px;
+            font-family: 'Open Sans';
+            font-weight: 400;
         }
     }
 }
@@ -122,18 +129,28 @@
     .och-list-extended-container {
 
         .och-list-extended {
+            padding: 2rem 0 4.375rem;
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             grid-template-rows: auto auto 1fr;
             grid-template-areas: 
                 "enum . . . . . . . . . . ."
-                "title title . . . . .  list list list list list"
-                "desc desc desc desc desc desc . list list list list list ";
+                "title title . . . . .  list list list list ."
+                "desc desc desc desc desc desc . list list list list . ";
 
             .och-list-enum { grid-area: enum; text-align: left; margin-bottom: 1.125rem; }
             .och-list-title { grid-area: title; text-align: left; margin-bottom: 1.5625rem; }
             .och-description { grid-area: desc !important; }
-            .och-list-list { grid-area: list; }
+            ul {
+                grid-area: list;
+
+                li {
+                    font-size: 1.3125rem;
+                    line-height: 34px;
+                    font-family: 'Open Sans';
+                    font-weight: 400;
+                }
+            }
         }
     }
 }

@@ -293,7 +293,9 @@
         height: 100vh;
 
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-end;
         padding-bottom: 3.125rem;
     }
 }

@@ -44,4 +44,11 @@
     <?php endif; ?>
 </main>
 
+<svg xmlns="http://www.w3.org/2000/svg" width="1369.073" height="1338.63" viewbox="0 0 1369.073 1338.63" class="och-blob" id="och-blob-9">
+    <path id="Trazado_1" data-name="Trazado 1" d="M490.5,0C966.158,106.291,1125.311,30.726,981,448.5S520.812,927.87,249.917,927.87,0,696.2,0,448.5,14.842-106.291,490.5,0Z" transform="translate(1357.93 803.748) rotate(150)" fill="#e7edf3"/>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1178.988" height="1095.879" viewbox="0 0 1178.988 1095.879" class="och-blob" id="och-blob-10">
+    <path id="Trazado_2" data-name="Trazado 2" d="M306.355,17.807c221.659,22.944,633.066,188.61,633.066,331.652S684.077,757.091,410.212,731.184,125.038,620.437,24,343.657,84.7-5.138,306.355,17.807Z" transform="translate(1180.041 638.141) rotate(150)" fill="#fdfde5"/>
+</svg>
+
 <?php get_footer(); ?>

@@ -567,14 +567,14 @@ input, button, textarea, select {
   background-color: var(--och-beige);
 }
 
-.och-section-index-articulos .och-card .och-card-img {
+.och-section-index-articulos .och-card .och-card-img, .och-section-articulos-articulos .och-card .och-card-img {
   width: 100%;
   height: auto;
 }
-.och-section-index-articulos .och-card .och-card-title {
-  margin-top: 1.875rem;
+.och-section-index-articulos .och-card .och-card-title, .och-section-articulos-articulos .och-card .och-card-title {
+  margin-top: 1rem;
 }
-.och-section-index-articulos .och-card .och-card-description {
+.och-section-index-articulos .och-card .och-card-description, .och-section-articulos-articulos .och-card .och-card-description {
   margin-top: 1.75rem;
 }
 
@@ -601,6 +601,13 @@ input, button, textarea, select {
     padding-right: 2.25rem;
     border-top: 0;
     border-right: 1px solid var(--och-gray);
+  }
+
+  .och-section-articulos-articulos .och-card .och-card-title {
+    margin-top: 1.875rem;
+  }
+  .och-section-articulos-articulos .och-card .och-card-description {
+    margin-top: 1.75rem;
   }
 }
 .och-card-red {
@@ -1409,5 +1416,119 @@ input, button, textarea, select {
 }
 /* #endregion Slogan */
 /* #endregion ---- Programas ---- */
+/* #region ---- Artículos ---- */
+.och-section-articulos-init {
+  margin-top: 0 !important;
+  grid-template-areas: "title title title title " "img img img img" "subtitle subtitle subtitle subtitle" "descr descr descr descr";
+}
+.och-section-articulos-init .och-title {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 3.125rem;
+}
+.och-section-articulos-init .och-img {
+  margin-bottom: 2rem;
+}
+.och-section-articulos-init .och-section-title {
+  grid-area: subtitle !important;
+  margin-bottom: 1rem;
+}
+
+.och-section-articulos-articulos {
+  display: inline-flex !important;
+  flex-wrap: wrap;
+  row-gap: 4rem;
+}
+.och-section-articulos-articulos .och-card {
+  width: 100%;
+}
+.och-section-articulos-articulos .och-card .och-card-description {
+  display: none;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-articulos-init {
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "title title title title title title . . . . . ." "img img img img img img img img subtitle subtitle subtitle ." "img img img img img img img img descr descr descr descr";
+  }
+  .och-section-articulos-init .och-title {
+    height: 70vh;
+  }
+  .och-section-articulos-init .och-img {
+    padding-top: 3.125rem;
+  }
+  .och-section-articulos-init .och-section-title {
+    align-self: flex-end;
+    font-size: 2rem;
+    line-height: 46px;
+    margin-bottom: 1.875rem;
+  }
+  .och-section-articulos-init .och-description {
+    align-self: flex-end;
+  }
+
+  .och-section-articulos-articulos {
+    column-gap: 2rem;
+    row-gap: 5.6rem;
+  }
+  .och-section-articulos-articulos .och-card {
+    width: 30%;
+  }
+  .och-section-articulos-articulos .och-card .och-card-description {
+    display: block;
+  }
+}
+/* #endregion ---- Artículos ---- */
+/* #region ---- Contacto ---- */
+.och-section-contacto-init {
+  margin-top: 0 !important;
+  grid-template-areas: "title title title title ";
+}
+.och-section-contacto-init .och-title {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 3.125rem;
+}
+
+.och-section-contacto-info {
+  grid-template-areas: "title title title title" "descr descr descr descr";
+}
+.och-section-contacto-info .och-img {
+  display: none;
+}
+
+.och-section-contacto-form {
+  grid-template-areas: "form form form form";
+}
+.och-section-contacto-form .och-form {
+  grid-area: form;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-contacto-init {
+    grid-template-areas: "title title title title title title . . . . . .";
+  }
+  .och-section-contacto-init .och-title {
+    height: 70vh;
+  }
+
+  .och-section-contacto-info {
+    grid-template-areas: ". . . title title title title title title title title ." ". . img descr descr descr descr descr descr descr descr .";
+  }
+  .och-section-contacto-info .och-img {
+    display: block;
+    align-self: flex-end;
+  }
+  .och-section-contacto-info .och-section-title {
+    margin-bottom: 2.5rem;
+  }
+
+  .och-section-contacto-form {
+    grid-template-areas: ". . . form form form form form form form form .";
+  }
+}
+/* #endregion ---- Contacto ---- */
 
 /*# sourceMappingURL=style.css.map */

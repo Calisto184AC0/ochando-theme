@@ -488,3 +488,153 @@
 /* #endregion Slogan */
 
 /* #endregion ---- Programas ---- */
+
+/* #region ---- Artículos ---- */
+
+.och-section-articulos-init {
+    margin-top: 0 !important;
+
+    grid-template-areas: 
+        "title title title title "
+        "img img img img"
+        "subtitle subtitle subtitle subtitle"
+        "descr descr descr descr";
+
+    .och-title {
+        height: 100vh;
+
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 3.125rem;
+    }
+
+    .och-img {
+        margin-bottom: 2rem;
+    }
+
+    .och-section-title {
+        grid-area: subtitle !important;
+        margin-bottom: 1rem;
+    }
+}
+
+.och-section-articulos-articulos {
+    display: inline-flex !important;
+    flex-wrap: wrap;
+    row-gap: 4rem;
+
+    .och-card {
+        width: 100%;
+
+        .och-card-description {
+            display: none;
+        }
+    }
+}
+
+@include desktop {
+    .och-section-articulos-init {
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+            "title title title title title title . . . . . ."
+            "img img img img img img img img subtitle subtitle subtitle ."
+            "img img img img img img img img descr descr descr descr";
+
+        .och-title {
+            height: 70vh;
+        }
+
+        .och-img {
+            padding-top: 3.125rem;
+        }
+
+        .och-section-title {
+            align-self: flex-end;
+            font-size: 2rem;
+            line-height: 46px;
+            margin-bottom: 1.875rem;
+        }
+
+        .och-description {
+            align-self: flex-end;
+        }
+    }
+
+    .och-section-articulos-articulos {
+        column-gap: 2rem;
+        row-gap: 5.6rem;
+
+        .och-card {
+            width: 30%;
+
+            .och-card-description {
+                display: block;
+            }
+        }
+    }
+}
+
+/* #endregion ---- Artículos ---- */
+
+/* #region ---- Contacto ---- */
+
+.och-section-contacto-init {
+    margin-top: 0 !important;
+
+    grid-template-areas: 
+        "title title title title ";
+
+    .och-title {
+        height: 100vh;
+
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 3.125rem;
+    }
+}
+
+.och-section-contacto-info {
+    grid-template-areas: 
+        "title title title title"
+        "descr descr descr descr";
+
+    .och-img { display: none; }
+}
+
+.och-section-contacto-form {
+    grid-template-areas: 
+        "form form form form";
+
+    .och-form { grid-area: form; }
+}
+
+@include desktop {
+    .och-section-contacto-init {
+        grid-template-areas: 
+            "title title title title title title . . . . . .";
+
+        .och-title {
+            height: 70vh;
+        }
+    }
+    
+    .och-section-contacto-info {
+        grid-template-areas: 
+            ". . . title title title title title title title title ."
+            ". . img descr descr descr descr descr descr descr descr .";
+
+        .och-img {
+            display: block;
+            align-self: flex-end;
+        }
+
+        .och-section-title { margin-bottom: 2.5rem; }
+    }
+    
+    .och-section-contacto-form {
+        grid-template-areas: 
+            ". . . form form form form form form form form .";
+    }
+}
+
+/* #endregion ---- Contacto ---- */

@@ -15,10 +15,10 @@
     }
 }
 
-.och-section-index-articulos .och-card {
+.och-section-index-articulos .och-card, .och-section-articulos-articulos .och-card {
 
     .och-card-img { width: 100%; height: auto; }
-    .och-card-title { margin-top: 1.875rem; }
+    .och-card-title { margin-top: 1rem; }
     .och-card-description { margin-top: 1.75rem; }
 }
 
@@ -42,6 +42,11 @@
         padding-right: 2.25rem;
         border-top: 0;
         border-right: 1px solid var(--och-gray);
+    }
+
+    .och-section-articulos-articulos .och-card {
+        .och-card-title { margin-top: 1.875rem; }
+        .och-card-description { margin-top: 1.75rem; }
     }
 }
 

@@ -33,7 +33,16 @@
 <?php 
 
 function the_sub_field_without_p_tags($subfield) {
-    echo strip_tags(get_sub_field($subfield), '<br><strong><em>');
+    $res = get_sub_field($subfield);
+    $res = str_replace('</p>', '<br>', $res);
+    $res = str_replace(array('<p>', '</p>'), '', $res);
+
+    echo $res;
+
+    //echo '<pre>' . str_replace(array('<', '>'), array('&lt;', '&gt;'), get_sub_field($subfield)) . '</pre>';
+    //echo str_replace(array('<', '>'), array('&lt;', '&gt;'), get_sub_field($subfield));
+
+    //echo strip_tags(get_sub_field($subfield), '<br><strong><em>');
 }
 
 ?>

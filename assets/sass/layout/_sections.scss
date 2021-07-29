@@ -489,7 +489,7 @@
 
 /* #endregion ---- Programas ---- */
 
-/* #region ---- Artículos ---- */
+/* #region ---- Blog ---- */
 
 .och-section-articulos-init {
     margin-top: 0 !important;
@@ -574,7 +574,7 @@
     }
 }
 
-/* #endregion ---- Artículos ---- */
+/* #endregion ---- Blog ---- */
 
 /* #region ---- Contacto ---- */
 
@@ -597,8 +597,6 @@
     grid-template-areas: 
         "title title title title"
         "descr descr descr descr";
-
-    .och-img { display: none; }
 }
 
 .och-section-contacto-form {
@@ -621,12 +619,7 @@
     .och-section-contacto-info {
         grid-template-areas: 
             ". . . title title title title title title title title ."
-            ". . img descr descr descr descr descr descr descr descr .";
-
-        .och-img {
-            display: block;
-            align-self: flex-end;
-        }
+            ". . . descr descr descr descr descr descr descr descr .";
 
         .och-section-title { margin-bottom: 2.5rem; }
     }
@@ -638,3 +631,118 @@
 }
 
 /* #endregion ---- Contacto ---- */
+
+/* #region ---- Articulo ---- */
+
+.och-section-articulo-relacionados {
+    grid-template-areas: 
+        "title title title title"
+        "card1 card1 card1 card1"
+        "card2 card2 card2 card2"
+        "card3 card3 card3 card3"
+        "btn   btn   btn   btn";
+
+    .och-card:nth-of-type(1) { margin-top: 3.75rem; }
+    .och-card:nth-of-type(2), .och-card:nth-of-type(3) { margin-top: 4.625rem; }
+
+    .och-btn {
+        width: 17.375rem;
+        margin-top: 4.75rem;
+    }
+}
+
+.och-section-articulo-title {
+    margin-top: 0 !important;
+
+    grid-template-areas: 
+        "title title title title ";
+
+    .och-title {
+        height: 100vh;
+
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 3.125rem;
+    }
+}
+
+.och-section-articulo-parrafo {
+    grid-template-areas: 
+        "title title title title"
+        "descr descr descr descr";
+}
+
+.och-section-articulo-img-full {
+    grid-template-areas: 
+        "img img img img";
+    margin-left: calc(0px - var(--och-lateral-margin));
+    margin-right: calc(0px - var(--och-lateral-margin));
+}
+
+.och-section-articulo-img-normal {
+    grid-template-areas: 
+        "img img img img";
+}
+
+.och-section-articulo-cta {
+    grid-template-areas: 
+        "descr descr descr descr"
+        "btn btn btn .";
+
+    .och-description {
+        margin-bottom: 4rem;
+    }
+}
+
+@include desktop {
+    .och-section-articulo-relacionados {
+        grid-template-areas: 
+            "title title title title title title title . . . . ."
+            "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3"
+            "btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn";
+
+        .och-btn {
+            margin-top: 6rem;
+            justify-self: center;
+        }
+        .och-card {
+            margin-top: 5.75rem !important;
+        }
+    }
+
+    .och-section-articulo-title {
+        grid-template-areas: 
+            "title title title title title title . . . . . .";
+
+        .och-title {
+            height: 70vh;
+        }
+    }
+
+    .och-section-articulo-parrafo {
+        grid-template-areas: 
+            ". . title title title title title title title title . ."
+            ". . descr descr descr descr descr descr descr descr . .";
+    }
+
+    .och-section-articulo-img-full {
+        grid-template-areas: 
+            "img img img img img img img img img img img img";
+
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .och-section-articulo-img-normal {
+        grid-template-areas: 
+            ". . img img img img img img img img . .";
+    }
+
+    .och-section-articulo-cta {
+        grid-template-areas: 
+            ". . descr descr descr descr descr descr descr descr . ."
+            ". . btn btn . . . . . . . .";
+    }
+}
+
+/* #endregion ---- Articulo ---- */

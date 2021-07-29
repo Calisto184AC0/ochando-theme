@@ -567,14 +567,14 @@ input, button, textarea, select {
   background-color: var(--och-beige);
 }
 
-.och-section-index-articulos .och-card .och-card-img, .och-section-articulos-articulos .och-card .och-card-img {
+.och-section-index-articulos .och-card .och-card-img, .och-section-articulos-articulos .och-card .och-card-img, .och-section-articulo-relacionados .och-card .och-card-img {
   width: 100%;
   height: auto;
 }
-.och-section-index-articulos .och-card .och-card-title, .och-section-articulos-articulos .och-card .och-card-title {
+.och-section-index-articulos .och-card .och-card-title, .och-section-articulos-articulos .och-card .och-card-title, .och-section-articulo-relacionados .och-card .och-card-title {
   margin-top: 1rem;
 }
-.och-section-index-articulos .och-card .och-card-description, .och-section-articulos-articulos .och-card .och-card-description {
+.och-section-index-articulos .och-card .och-card-description, .och-section-articulos-articulos .och-card .och-card-description, .och-section-articulo-relacionados .och-card .och-card-description {
   margin-top: 1.75rem;
 }
 
@@ -1416,7 +1416,7 @@ input, button, textarea, select {
 }
 /* #endregion Slogan */
 /* #endregion ---- Programas ---- */
-/* #region ---- Artículos ---- */
+/* #region ---- Blog ---- */
 .och-section-articulos-init {
   margin-top: 0 !important;
   grid-template-areas: "title title title title " "img img img img" "subtitle subtitle subtitle subtitle" "descr descr descr descr";
@@ -1479,7 +1479,7 @@ input, button, textarea, select {
     display: block;
   }
 }
-/* #endregion ---- Artículos ---- */
+/* #endregion ---- Blog ---- */
 /* #region ---- Contacto ---- */
 .och-section-contacto-init {
   margin-top: 0 !important;
@@ -1494,9 +1494,6 @@ input, button, textarea, select {
 
 .och-section-contacto-info {
   grid-template-areas: "title title title title" "descr descr descr descr";
-}
-.och-section-contacto-info .och-img {
-  display: none;
 }
 
 .och-section-contacto-form {
@@ -1515,11 +1512,7 @@ input, button, textarea, select {
   }
 
   .och-section-contacto-info {
-    grid-template-areas: ". . . title title title title title title title title ." ". . img descr descr descr descr descr descr descr descr .";
-  }
-  .och-section-contacto-info .och-img {
-    display: block;
-    align-self: flex-end;
+    grid-template-areas: ". . . title title title title title title title title ." ". . . descr descr descr descr descr descr descr descr .";
   }
   .och-section-contacto-info .och-section-title {
     margin-bottom: 2.5rem;
@@ -1530,5 +1523,90 @@ input, button, textarea, select {
   }
 }
 /* #endregion ---- Contacto ---- */
+/* #region ---- Articulo ---- */
+.och-section-articulo-relacionados {
+  grid-template-areas: "title title title title" "card1 card1 card1 card1" "card2 card2 card2 card2" "card3 card3 card3 card3" "btn   btn   btn   btn";
+}
+.och-section-articulo-relacionados .och-card:nth-of-type(1) {
+  margin-top: 3.75rem;
+}
+.och-section-articulo-relacionados .och-card:nth-of-type(2), .och-section-articulo-relacionados .och-card:nth-of-type(3) {
+  margin-top: 4.625rem;
+}
+.och-section-articulo-relacionados .och-btn {
+  width: 17.375rem;
+  margin-top: 4.75rem;
+}
+
+.och-section-articulo-title {
+  margin-top: 0 !important;
+  grid-template-areas: "title title title title ";
+}
+.och-section-articulo-title .och-title {
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 3.125rem;
+}
+
+.och-section-articulo-parrafo {
+  grid-template-areas: "title title title title" "descr descr descr descr";
+}
+
+.och-section-articulo-img-full {
+  grid-template-areas: "img img img img";
+  margin-left: calc(0px - var(--och-lateral-margin));
+  margin-right: calc(0px - var(--och-lateral-margin));
+}
+
+.och-section-articulo-img-normal {
+  grid-template-areas: "img img img img";
+}
+
+.och-section-articulo-cta {
+  grid-template-areas: "descr descr descr descr" "btn btn btn .";
+}
+.och-section-articulo-cta .och-description {
+  margin-bottom: 4rem;
+}
+
+@media only screen and (min-width: 1023px) {
+  .och-section-articulo-relacionados {
+    grid-template-areas: "title title title title title title title . . . . ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3" "btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn";
+  }
+  .och-section-articulo-relacionados .och-btn {
+    margin-top: 6rem;
+    justify-self: center;
+  }
+  .och-section-articulo-relacionados .och-card {
+    margin-top: 5.75rem !important;
+  }
+
+  .och-section-articulo-title {
+    grid-template-areas: "title title title title title title . . . . . .";
+  }
+  .och-section-articulo-title .och-title {
+    height: 70vh;
+  }
+
+  .och-section-articulo-parrafo {
+    grid-template-areas: ". . title title title title title title title title . ." ". . descr descr descr descr descr descr descr descr . .";
+  }
+
+  .och-section-articulo-img-full {
+    grid-template-areas: "img img img img img img img img img img img img";
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .och-section-articulo-img-normal {
+    grid-template-areas: ". . img img img img img img img img . .";
+  }
+
+  .och-section-articulo-cta {
+    grid-template-areas: ". . descr descr descr descr descr descr descr descr . ." ". . btn btn . . . . . . . .";
+  }
+}
+/* #endregion ---- Articulo ---- */
 
 /*# sourceMappingURL=style.css.map */

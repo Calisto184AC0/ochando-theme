@@ -3,7 +3,7 @@
 // Agregar javascripts y css
 function och_scripts_styles() {
     // Estilos
-    wp_enqueue_style('styles', get_template_directory_uri() . '/assets/css/style.min.css', array(), '1.0.14>');
+    wp_enqueue_style('styles', get_template_directory_uri() . '/assets/css/style.min.css', array(), '1.0.15>');
     wp_enqueue_script('script', get_template_directory_uri() .'/assets/js/script.js', array(), '1.0.3', true);
 }
 

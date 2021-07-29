@@ -15,11 +15,13 @@
     }
 }
 
-.och-section-index-articulos .och-card, .och-section-articulos-articulos .och-card {
+.och-section-index-articulos, .och-section-articulos-articulos, .och-section-articulo-relacionados {
 
-    .och-card-img { width: 100%; height: auto; }
-    .och-card-title { margin-top: 1rem; }
-    .och-card-description { margin-top: 1.75rem; }
+    .och-card {
+        .och-card-img { width: 100%; height: auto; }
+        .och-card-title { margin-top: 1rem; }
+        .och-card-description { margin-top: 1.75rem; }
+    }
 }
 
 .och-section-quiensoy-info .och-card {

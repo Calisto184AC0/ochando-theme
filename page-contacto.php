@@ -16,7 +16,6 @@
                 <section class="och-section och-section-contacto-info">
                     <h2 class="och-section-title"><?php the_sub_field('titulo'); ?></h2>
                     <p class="och-description"><?php the_sub_field_without_p_tags('descripcion'); ?></p>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/icon/question.svg" class="och-img" alt="">
                 </section>
 
             <?php elseif (get_row_layout() == 'contacto_form') : ?>

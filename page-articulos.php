@@ -11,7 +11,7 @@
                 <h1 class="och-title"><?php the_sub_field('titulo'); ?></h1>
                 <img src="<?php echo esc_url(get_sub_field('imagen')['url']); ?>" alt="<?php echo esc_url(get_sub_field('imagen')['alt']); ?>" class="och-img">
                 <h2 class="och-section-title"><?php the_sub_field('sub_titulo'); ?></h2>
-                <p class="och-description"><?php the_sub_field('descripcion'); ?></p>
+                <p class="och-description"><?php the_sub_field_without_p_tags('descripcion'); ?></p>
             </section>
 
             <?php endif; ?>

@@ -9,8 +9,14 @@
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     font-family: "Open Sans";
-    overflow-x: hidden;
     background-color: var(--och-beige);
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
   }
   
   body,

@@ -8,8 +8,15 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: "Open Sans";
-  overflow-x: hidden;
   background-color: var(--och-beige);
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
 }
 
 body,
@@ -973,6 +980,9 @@ input, button, textarea, select {
 .och-header .och-nav .och-header-menu * {
   color: var(--och-black);
 }
+.och-header .och-nav .och-header-menu .current-menu-item {
+  font-style: italic;
+}
 .och-header .och-nav .och-header-menu a {
   display: inline-block;
   padding-bottom: 1.25rem;
@@ -1426,9 +1436,6 @@ input, button, textarea, select {
   display: flex;
   align-items: flex-end;
   padding-bottom: 3.125rem;
-}
-.och-section-articulos-init .och-img {
-  margin-bottom: 2rem;
 }
 .och-section-articulos-init .och-section-title {
   grid-area: subtitle !important;

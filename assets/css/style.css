@@ -980,7 +980,7 @@ input, button, textarea, select {
 .och-header .och-nav .och-header-menu * {
   color: var(--och-black);
 }
-.och-header .och-nav .och-header-menu .current-menu-item {
+.och-header .och-nav .och-header-menu .current-menu-item a {
   font-style: italic;
 }
 .och-header .och-nav .och-header-menu a {

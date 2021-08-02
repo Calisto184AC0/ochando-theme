@@ -32,10 +32,14 @@
 
 <?php 
 
-function the_sub_field_without_p_tags($subfield) {
+function the_sub_field_without_p_tags($subfield, $wo_br = true) {
     $res = get_sub_field($subfield);
-    $res = str_replace('</p>', '<br>', $res);
+    if ($wo_br)
+        $res = str_replace('</p>', '<br>', $res);
     $res = str_replace(array('<p>', '</p>'), '', $res);
+
+    if (!$wo_br)
+        $res = str_replace(array('<hr />', '<hr>'), '<br><br><hr style="border-top: 0px;"><br>', $res);
 
     echo $res;
 

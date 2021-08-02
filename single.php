@@ -40,8 +40,8 @@
 
                 <section class="och-section och-section-programas-text">
                     <p class="och-description"><?php the_sub_field_without_p_tags('descripcion_1'); ?></p>
-                    <p class="och-description och-programas-description"><?php the_sub_field_without_p_tags('descripcion_2'); ?></p>
-                    <p class="och-description"><?php the_sub_field_without_p_tags('descripcion_3'); ?></p>
+                    <?php if (get_sub_field('descripcion_2')) :  ?><p class="och-description och-programas-description"><?php the_sub_field_without_p_tags('descripcion_2'); ?></p> <?php endif; ?>
+                    <?php if (get_sub_field('descripcion_2')) :  ?><p class="och-description"><?php the_sub_field_without_p_tags('descripcion_3'); ?></p></p> <?php endif; ?>
                 </section>
 
             <?php elseif (get_row_layout() == 'programas_pasos_extended') : ?>
@@ -70,8 +70,10 @@
 
                 <section class="och-section och-section-programas-procedimiento">
                     <h2 class="och-section-title"><?php the_sub_field('titulo'); ?></h2>
-                    <p class="och-description"><?php the_sub_field_without_p_tags('descripcion_1'); ?></p>
-                    <p class="och-description"><?php the_sub_field_without_p_tags('descripcion_2'); ?></p>
+                    <?php if (get_sub_field('descripcion_1')) : ?>
+                        <div class="och-description"><?php the_sub_field_without_p_tags('descripcion_1'); ?></div>
+                    <?php endif; ?>
+                    <div class="och-description"><?php the_sub_field_without_p_tags('descripcion_2', false); ?></div>
                     <?php while( have_rows('fases') ): the_row(); ?>
 
                         <span class="och-btn och-btn-<?php the_sub_field('color'); ?>"><?php the_sub_field('titulo'); ?></span>

@@ -5,7 +5,10 @@
 
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  text-rendering: optimizeLegibility;
   line-height: 1.5;
   font-family: "Open Sans";
   background-color: var(--och-beige);
@@ -53,6 +56,7 @@ a:not([class]) {
 img, picture {
   max-width: 100%;
   display: block;
+  filter: grayscale(1);
 }
 
 input, button, textarea, select {
@@ -580,6 +584,7 @@ input, button, textarea, select {
 }
 .och-section-index-articulos .och-card .och-card-title, .och-section-articulos-articulos .och-card .och-card-title, .och-section-articulo-relacionados .och-card .och-card-title {
   margin-top: 1rem;
+  color: var(--och-black);
 }
 .och-section-index-articulos .och-card .och-card-description, .och-section-articulos-articulos .och-card .och-card-description, .och-section-articulo-relacionados .och-card .och-card-description {
   margin-top: 1.75rem;
@@ -607,6 +612,8 @@ input, button, textarea, select {
   .och-section-quiensoy-info .och-card {
     padding-right: 2.25rem;
     border-top: 0;
+  }
+  .och-section-quiensoy-info .och-card:not(:last-child) {
     border-right: 1px solid var(--och-gray);
   }
 
@@ -677,7 +684,7 @@ input, button, textarea, select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-top: 1px solid var(--och-gray);
+  border-top: 1px solid #999;
 }
 .och-list-extended-container .och-list-extended .och-list-enum {
   margin-bottom: 1.125rem;
@@ -989,6 +996,11 @@ input, button, textarea, select {
 }
 .och-header .och-nav .och-header-menu ul {
   margin-left: 2rem;
+  max-width: 85%;
+}
+.och-header .och-nav .och-header-menu ul li {
+  font-size: 1.25rem;
+  line-height: 32px;
 }
 .och-header .och-nav::after {
   content: "";
@@ -1205,7 +1217,7 @@ input, button, textarea, select {
 
 @media only screen and (min-width: 1023px) {
   .och-section-quiensoy-init {
-    grid-template-areas: "title title title title title title . . . . . ." "img img . descr descr descr descr descr descr descr descr descr";
+    grid-template-areas: "title title title title title title . . . . . ." "img img img descr descr descr descr descr descr descr descr descr";
   }
   .och-section-quiensoy-init .och-title {
     height: 70vh;
@@ -1367,6 +1379,7 @@ input, button, textarea, select {
   margin-bottom: 4.25rem;
 }
 .och-section-programas-procedimiento .och-btn {
+  font-size: 1.5rem;
   margin-bottom: 1.875rem;
   letter-spacing: -0.025rem;
   font-family: "Libre Baskerville";

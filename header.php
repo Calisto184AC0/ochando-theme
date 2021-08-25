@@ -39,7 +39,7 @@ function the_sub_field_without_p_tags($subfield, $wo_br = true) {
     $res = str_replace(array('<p>', '</p>'), '', $res);
 
     if (!$wo_br)
-        $res = str_replace(array('<hr />', '<hr>'), '<br><br><hr style="border-top: 0px;"><br>', $res);
+        $res = str_replace(array('<hr />', '<hr>'), '<br><br><hr style="border-top: 0px; border-color: #999;"><br>', $res);
 
     echo $res;
 

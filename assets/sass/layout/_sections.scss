@@ -194,7 +194,7 @@
     .och-section-quiensoy-init {
         grid-template-areas: 
             "title title title title title title . . . . . ."
-            "img img . descr descr descr descr descr descr descr descr descr";
+            "img img img descr descr descr descr descr descr descr descr descr";
         
         .och-title {
             height: 70vh;
@@ -423,6 +423,7 @@
     }
     
     .och-btn {
+        font-size: 1.5rem;
         margin-bottom: 1.875rem;
         letter-spacing: -0.025rem;
         font-family: "Libre Baskerville";

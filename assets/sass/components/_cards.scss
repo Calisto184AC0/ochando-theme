@@ -19,7 +19,7 @@
 
     .och-card {
         .och-card-img { width: 100%; height: auto; }
-        .och-card-title { margin-top: 1rem; }
+        .och-card-title { margin-top: 1rem; color: var(--och-black); }
         .och-card-description { margin-top: 1.75rem; }
     }
 }
@@ -43,7 +43,11 @@
     .och-section-quiensoy-info .och-card {
         padding-right: 2.25rem;
         border-top: 0;
-        border-right: 1px solid var(--och-gray);
+
+        &:not(:last-child) {
+            border-right: 1px solid var(--och-gray);
+        }
+        
     }
 
     .och-section-articulos-articulos .och-card {

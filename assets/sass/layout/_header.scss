@@ -69,8 +69,12 @@
 
             ul {
                 margin-left: 2rem;
+                max-width: 85%;
 
-                
+                li {
+                    font-size: 1.25rem;
+                    line-height: 32px;
+                }
             }
         }
 

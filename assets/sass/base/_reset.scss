@@ -6,7 +6,10 @@
   
   body {
     min-height: 100vh;
-    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    font-smooth: always; 
+    text-rendering: optimizeLegibility;
     line-height: 1.5;
     font-family: "Open Sans";
     background-color: var(--och-beige);
@@ -53,6 +56,7 @@
   img, picture {
     max-width: 100%;
     display: block;
+    filter: grayscale(1);
   }
   
   input, button, textarea, select {

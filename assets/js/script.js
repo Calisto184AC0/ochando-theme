@@ -39,16 +39,25 @@ let ConfigMenu = () => { // Abrir y cerrar el menu pulsando un icono
         if (e.target.className === menuIcon.className) {
             if (menu.style.transform === "" || menu.style.transform === 'translateX(100%)') {
                 menu.style.transform = 'translateX(0%)'
-                if (window.innerWidth < DESKTOP_SIZE) { document.body.style.overflow = 'hidden' }
+                if (window.innerWidth < DESKTOP_SIZE) {
+                    document.body.style.overflow = 'hidden'
+                    document.body.style.position = 'fixed'
+                } else {
+                    document.body.style.overflow = 'scroll'
+                    document.body.style.position = 'fixed'
+                }
+                
             }
             else {
                 menu.style.transform = 'translateX(100%)'
                 document.body.style.overflow = ''
+                document.body.style.position = ''
             }   
         }
         else if (e.clientX < document.getElementsByClassName('och-header-menu')[0].getBoundingClientRect().left - 130 && menu.style.transform === 'translateX(0%)') {
             menu.style.transform = 'translateX(100%)'
             document.body.style.overflow = ''
+            document.body.style.position = ''
         }
     }
 }

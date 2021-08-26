@@ -586,6 +586,9 @@ input, button, textarea, select {
   margin-top: 1rem;
   color: var(--och-black);
 }
+.och-section-index-articulos .och-card .och-card-title h3, .och-section-articulos-articulos .och-card .och-card-title h3, .och-section-articulo-relacionados .och-card .och-card-title h3 {
+  color: inherit;
+}
 .och-section-index-articulos .och-card .och-card-description, .och-section-articulos-articulos .och-card .och-card-description, .och-section-articulo-relacionados .och-card .och-card-description {
   margin-top: 1.75rem;
 }
@@ -1456,15 +1459,12 @@ input, button, textarea, select {
 }
 
 .och-section-articulos-articulos {
-  display: inline-flex !important;
-  flex-wrap: wrap;
-  row-gap: 4rem;
+  display: grid;
+  grid-template-columns: 1fr !important;
+  row-gap: 3rem;
 }
 .och-section-articulos-articulos .och-card {
-  width: 100%;
-}
-.och-section-articulos-articulos .och-card .och-card-description {
-  display: none;
+  grid-area: auto !important;
 }
 
 @media only screen and (min-width: 1023px) {
@@ -1489,14 +1489,8 @@ input, button, textarea, select {
   }
 
   .och-section-articulos-articulos {
-    column-gap: 2rem;
-    row-gap: 5.6rem;
-  }
-  .och-section-articulos-articulos .och-card {
-    width: 30%;
-  }
-  .och-section-articulos-articulos .och-card .och-card-description {
-    display: block;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    row-gap: 5.625rem;
   }
 }
 /* #endregion ---- Blog ---- */

@@ -30,8 +30,8 @@
         ?>
 
             <div class="och-card">
-                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'och-card-img')); ?></a>
-                <h3 class="och-card-title"><?php the_title(); ?></h3>
+                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large', array('class' => 'och-card-img')); ?></a>
+                <a href="<?php the_permalink(); ?>"><h3 class="och-card-title"><?php the_title(); ?></h3></a>
                 <p class="och-card-description"><?php echo get_the_excerpt(); ?></p>
             </div>
 

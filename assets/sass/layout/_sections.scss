@@ -516,17 +516,12 @@
 }
 
 .och-section-articulos-articulos {
-    display: inline-flex !important;
-    flex-wrap: wrap;
-    row-gap: 4rem;
 
-    .och-card {
-        width: 100%;
+    display: grid;
+    grid-template-columns: 1fr !important;
+    row-gap: 3rem;
 
-        .och-card-description {
-            display: none;
-        }
-    }
+    .och-card { grid-area: auto !important; }
 }
 
 @include desktop {
@@ -558,16 +553,8 @@
     }
 
     .och-section-articulos-articulos {
-        column-gap: 2rem;
-        row-gap: 5.6rem;
-
-        .och-card {
-            width: 30%;
-
-            .och-card-description {
-                display: block;
-            }
-        }
+        grid-template-columns: 1fr 1fr 1fr !important;
+        row-gap: 5.625rem;
     }
 }
 

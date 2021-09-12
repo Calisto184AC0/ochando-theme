@@ -30,7 +30,6 @@
         height: 100vh;
 
         display: grid;
-        column-gap: var(--och-column-gap);
         grid-template-columns: repeat(4, 1fr);
         grid-template-areas: "bg menu menu menu";
 
@@ -46,7 +45,7 @@
         .och-header-menu {
             grid-area: menu;
 
-            padding-top: 9.375rem;
+            padding-top: 6rem;
 
             display: flex;
             flex-direction: column;
@@ -64,7 +63,7 @@
 
             a {
                 display: inline-block;
-                padding-bottom: 1.25rem;
+                padding-bottom: .25rem;
             }
 
             ul {
@@ -72,8 +71,8 @@
                 max-width: 85%;
 
                 li {
-                    font-size: 1.25rem;
-                    line-height: 32px;
+                    font-size: .9rem;
+                    line-height: 26px;
                 }
             }
         }
@@ -98,6 +97,15 @@
         .och-nav {
             grid-template-columns: repeat(12, 1fr);
             grid-template-areas: ". . . . . . . . bg menu menu menu";
+
+            .och-header-menu ul li {
+                font-size: 1.25rem;
+                line-height: 36px;
+
+                a {
+                    padding-bottom: 1.25rem;
+                }
+            }
         }
         .och-btn {
             display: flex;

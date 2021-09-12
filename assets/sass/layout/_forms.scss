@@ -2,9 +2,9 @@
 
 .och-form {
     padding-top: 3.125rem;
+    padding-right: 1.875rem;
     border-top: 1px solid var(--och-gray);
     border-right: 1px solid var(--och-gray);
-    margin-top: 3.75rem;
 
     position: relative;
 
@@ -14,8 +14,14 @@
     align-items: flex-start;
     justify-content: stretch;
 
-    & > *:not(:last-child) {
-        margin-right: 1.875rem;
+    .wpcf7-response-output {
+        display: none !important;
+    }
+
+    .och-input { width: 100%; }
+
+    .och-input-incorrect {
+        outline: 2px solid #ff6060;
     }
 
     .och-form-title {
@@ -25,6 +31,12 @@
     .och-form-description {
         grid-area: descr;
         margin-top: 1.5rem;
+
+        .wpcf7-list-item {
+            margin: 0 .7rem 0 0 !important;
+
+            input { margin: 0; }
+        }
     }
     input.och-input:nth-of-type(1) { grid-area: inpt1; }
     .och-input:nth-of-type(2) { grid-area: inpt2; }
@@ -57,6 +69,7 @@
 }
 
 .och-form-newsletter {
+    height: 100%;
     grid-template-rows: auto auto auto auto auto 1fr;
 
     grid-template-areas: 

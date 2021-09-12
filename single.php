@@ -56,7 +56,10 @@
                                 <span class="och-list-enum"><?php echo get_row_index() ?></span>
                                 <h3 class="och-list-title"><?php the_sub_field('titulo'); ?></h3>
                                 <p class="och-description"><?php the_sub_field('descripcion'); ?></p>
-                                <?php the_sub_field('lista'); ?>
+                                <?php
+                                    $list_with_check = str_replace('</li>', '</li><img src= "' . get_template_directory_uri() . '/assets/icon/check.svg" >', get_sub_field('lista'));
+                                    echo $list_with_check;
+                                ?>
                             </div>
 
                         <?php endwhile; ?>
@@ -148,8 +151,8 @@
         ?>
 
             <div class="och-card">
-                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail', array('class' => 'och-card-img')); ?></a>
-                <h3 class="och-card-title"><?php the_title(); ?></h3>
+                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large', array('class' => 'och-card-img')); ?></a>
+                <a href="<?php the_permalink(); ?>"><h3 class="och-card-title"><?php the_title(); ?></h3></a>
                 <p class="och-card-description"><?php echo get_the_excerpt(); ?></p>
             </div>
 

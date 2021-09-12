@@ -9,6 +9,15 @@
     border-radius: 50rem;
     color: var(--och-black);
 
+    &:disabled {
+        opacity: .3;
+
+        &:hover {
+            background-color: transparent !important;
+            border: 1px solid var(--och-gray) !important;
+        }
+    }
+
     &:hover {
         cursor: pointer;
         border: 1px solid var(--och-green);

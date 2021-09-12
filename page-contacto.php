@@ -21,15 +21,7 @@
             <?php elseif (get_row_layout() == 'contacto_form') : ?>
 
                 <section class="och-section och-section-contacto-form">
-                    <form action="" class="och-form och-form-contacto">
-                        <h3 class="och-form-title"><?php the_sub_field('titulo'); ?></h3>
-                        <input type="text" class="och-input" placeholder="Nombre">
-                        <input type="text" class="och-input" placeholder="Email">
-                        <input type="text" class="och-input" placeholder="Código postal">
-                        <textarea name="" id="" rows="10" class="och-input" placeholder="Asunto"></textarea>
-                        <p class="och-form-description"><?php the_sub_field('descripcion'); ?></p>
-                        <button class="och-btn">Enviar</button>
-                    </form>
+                <?php echo do_shortcode('[contact-form-7 id="324" title="Formulario de contacto html_class="och-form och-form-contacto"]'); ?>
                 </section>
 
             <?php endif; ?>

@@ -31,7 +31,7 @@
     .och-section-index-init {
 
         grid-template-areas: 
-            "title title title title title title title title . . . ."
+            "title title title title title title title title title title title title"
             "img img img img img . descr descr descr descr descr descr"
             "img img img img img . btn btn . . . .";
 
@@ -72,11 +72,12 @@
         margin-bottom: 5.3125rem;
     }
     .och-description:nth-of-type(2) {
-        margin-bottom: 3.75rem;
+        margin-bottom: 3.75rem !important;
         grid-area: descr2;
         font-family: "Libre Baskerville";
         letter-spacing: -0.025rem;
-        font-size: 1rem;
+        font-size: 1.5rem !important;
+        line-height: 36px;
     }
     .och-btn {
         margin-bottom: 6.5rem !important; 
@@ -91,13 +92,14 @@
         grid-template-areas: 
             "title title title title title title descr descr descr descr descr descr"
             "list list list list list list list list list list list list"
-            ". . . . . . descr2 descr2 descr2 descr2 descr2 descr2"
-            ". . . . . . btn btn . . . .";
+            "descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2"
+            ". . . . . btn btn . . . . .";
 
         .och-description { margin-bottom: 3.125rem; }
         .och-btn { margin-bottom: 13.5rem; }
         .och-description:nth-of-type(2) {
-            font-size: 1.5rem;
+            font-size: 2.5rem !important;
+            line-height: 54px;
         }
     }
 }
@@ -193,7 +195,7 @@
 @include desktop {
     .och-section-quiensoy-init {
         grid-template-areas: 
-            "title title title title title title . . . . . ."
+            "title title title title title title title title title title title title"
             "img img img descr descr descr descr descr descr descr descr descr";
         
         .och-title {
@@ -201,7 +203,8 @@
         }
 
         .och-img {
-            margin-top: 0;
+            padding-top: 0;
+            margin-top: 2.2rem;
         }
     }
 }
@@ -303,7 +306,7 @@
 @include desktop {
     .och-section-programas-init {
         grid-template-areas: 
-            "title title title title title title title title title title title .";
+            "title title title title title title title title title title title title";
         
         .och-title {
             height: 70vh;
@@ -423,10 +426,11 @@
     }
     
     .och-btn {
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin-bottom: 1.875rem;
         letter-spacing: -0.025rem;
         font-family: "Libre Baskerville";
+        text-align: center;
     }
 
     .och-btn:nth-of-type(1) { grid-area: s1; }
@@ -456,6 +460,10 @@
         .och-description:nth-of-type(2) {
             margin-top: 4.25rem;
             margin-bottom: 6.25rem;
+        }
+
+        .och-btn {
+            font-size: 1.5rem;
         }
     }
 }
@@ -587,7 +595,7 @@
     grid-template-areas: 
         "form form form form";
 
-    .och-form { grid-area: form; }
+    .wpcf7 { grid-area: form; }
 }
 
 @include desktop {
@@ -654,6 +662,11 @@
     grid-template-areas: 
         "title title title title"
         "descr descr descr descr";
+
+    .och-description a {
+        color: var(--och-black);
+        text-decoration: underline;
+    }
 }
 
 .och-section-articulo-img-full {
@@ -675,6 +688,10 @@
 
     .och-description {
         margin-bottom: 4rem;
+        a {
+            color: var(--och-black);
+            text-decoration: underline;
+        }
     }
 }
 
@@ -696,7 +713,7 @@
 
     .och-section-articulo-title {
         grid-template-areas: 
-            "title title title title title title . . . . . .";
+            "title title title title title title title title title title title title";
 
         .och-title {
             height: 70vh;
@@ -730,3 +747,27 @@
 }
 
 /* #endregion ---- Articulo ---- */
+
+.och-section-default {
+    display: block !important;
+    padding: 4rem 0;
+
+    & > * {
+        margin-bottom: 2rem;
+    }
+}
+
+@include desktop {
+    .och-section-default {
+        padding: 6rem 15.625rem;
+    }
+}
+
+@media (min-width: 1023px) and (max-width: 1400px) {
+    .och-section-programas-init, .och-section-index-init, .och-section-articulos-init, .och-section-quiensoy-init, .och-section-articulo-title {
+        .och-title {
+            font-size: 3.5rem;
+            line-height: 75px;
+        }
+    } 
+}

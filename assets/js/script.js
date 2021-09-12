@@ -1,5 +1,6 @@
 // Constantes
 const DESKTOP_SIZE = 1023
+const MIN_HEIGHT = 600
 
 // Variables
 let isDesktop = undefined // sirve para no repetir las funciones todo el rato
@@ -14,7 +15,7 @@ let carouselController = document.getElementsByClassName('och-list-controller-co
 let imgSVG = document.getElementById('och-blob-1')
 
 // Funciones
-let InitProgram = () => { window.innerWidth > DESKTOP_SIZE ? ExecDesktopFunctions() : ExecMobileFunctions() }
+let InitProgram = () => { window.innerWidth > DESKTOP_SIZE && window.innerHeight > MIN_HEIGHT ? ExecDesktopFunctions() : ExecMobileFunctions() }
 
 let ExecDesktopFunctions = () => {
     if (!isDesktop || isDesktop === undefined) {
@@ -31,37 +32,6 @@ let ExecMobileFunctions = () => {
         mobileFunctions.forEach(f => f())
     }
 }
-
-let ConfigMenu = () => { // Abrir y cerrar el menu pulsando un icono
-    let menuIcon = document.getElementsByClassName('och-header-menu-icon')[0]
-    let menu = document.getElementsByClassName('och-nav')[0]
-    document.onclick = (e) => {
-        if (e.target.className === menuIcon.className) {
-            if (menu.style.transform === "" || menu.style.transform === 'translateX(100%)') {
-                menu.style.transform = 'translateX(0%)'
-                if (window.innerWidth < DESKTOP_SIZE) {
-                    document.body.style.overflow = 'hidden'
-                    document.body.style.position = 'fixed'
-                } else {
-                    document.body.style.overflow = 'scroll'
-                    document.body.style.position = 'fixed'
-                }
-                
-            }
-            else {
-                menu.style.transform = 'translateX(100%)'
-                document.body.style.overflow = ''
-                document.body.style.position = ''
-            }   
-        }
-        else if (e.clientX < document.getElementsByClassName('och-header-menu')[0].getBoundingClientRect().left - 130 && menu.style.transform === 'translateX(0%)') {
-            menu.style.transform = 'translateX(100%)'
-            document.body.style.overflow = ''
-            document.body.style.position = ''
-        }
-    }
-}
-ConfigMenu()
 
 let ConfigPasosMobile = () => {
 
@@ -133,3 +103,141 @@ if (carousel !== undefined) desktopFunctions.push(ConfigPasosDesktop)
 
 InitProgram()
 window.onresize = () => { InitProgram() }
+
+// Funciones para las dos versiones
+let ConfigMenu = () => { // Abrir y cerrar el menu pulsando un icono
+    let menuIcon = document.getElementsByClassName('och-header-menu-icon')[0]
+    let menu = document.getElementsByClassName('och-nav')[0]
+    document.onclick = (e) => {
+        if (e.target.className === menuIcon.className) {
+            if (menu.style.transform === "" || menu.style.transform === 'translateX(100%)') {
+                menu.style.transform = 'translateX(0%)'
+                menu.style.overflow = 'auto'
+
+                if (window.innerWidth < DESKTOP_SIZE || window.innerHeight < MIN_HEIGHT) {
+                    document.body.style.overflow = 'hidden'
+                    document.body.style.position = 'fixed'
+                } else {
+                    document.body.style.overflow = 'scroll'
+                    document.body.style.position = 'fixed'
+                }
+                
+            }
+            else {
+                menu.style.transform = 'translateX(100%)'
+                menu.style.overflow = ''
+                document.body.style.overflow = ''
+                document.body.style.position = ''
+            }   
+        }
+        else if (e.clientX < document.getElementsByClassName('och-header-menu')[0].getBoundingClientRect().left - 130 && menu.style.transform === 'translateX(0%)') {
+            menu.style.transform = 'translateX(100%)'
+            menu.style.overflow = ''
+            document.body.style.overflow = ''
+            document.body.style.position = ''
+        }
+    }
+}
+ConfigMenu()
+
+let IsEmailValid = email => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+let ConfigForms = () => {
+    let newsletterForm = document.getElementsByClassName('och-form-newsletter')[0]
+    if (newsletterForm !== undefined) {
+        let inputs = newsletterForm.getElementsByClassName('och-input')
+
+        let checkbox = newsletterForm.getElementsByClassName('och-checkbox')[0]
+        let nombreInput = inputs[0]
+        let emailInput = inputs[1]
+
+        let submit = newsletterForm.querySelectorAll("input[type=submit")[0]
+        submit.disabled = true
+
+        checkbox.onclick = () => { checkbox.checked && nombreInput.value !== "" && IsEmailValid(emailInput.value)  ? submit.disabled = false : submit.disabled = true }
+        nombreInput.onchange = e => {
+            if (checkbox.checked && nombreInput.value !== "" && IsEmailValid(emailInput.value)) {
+                submit.disabled = false
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else if (nombreInput.value !== "") {
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else {
+                submit.disabled = true
+                e.target.classList.add('och-input-incorrect')
+            }
+        }
+        emailInput.onchange = e => {
+            if (checkbox.checked && nombreInput.value !== "" && IsEmailValid(emailInput.value)) {
+                submit.disabled = false
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else if (IsEmailValid(emailInput.value)) {
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else {
+                submit.disabled = true
+                e.target.classList.add('och-input-incorrect')
+            }
+        }
+    }
+
+    let contactForm = document.getElementsByClassName('och-form-contacto')[0]
+    if (contactForm !== undefined) {
+        let inputs = contactForm.getElementsByClassName('och-input')
+
+        let checkbox = contactForm.getElementsByClassName('och-checkbox')[0]
+        let nombreInput = inputs[0]
+        let emailInput = inputs[1]
+        let asuntoInput = inputs[2]
+
+        let submit = contactForm.querySelectorAll("input[type=submit")[0]
+        submit.disabled = true
+
+        checkbox.onclick = () => { checkbox.checked && nombreInput.value !== "" && IsEmailValid(emailInput.value) && asuntoInput.value !== "" ? submit.disabled = false : submit.disabled = true }
+        nombreInput.onchange = e => {
+            if (checkbox.checked && nombreInput.value !== "" && IsEmailValid(emailInput.value) && asuntoInput.value !== "") {
+                submit.disabled = false
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else if (nombreInput.value !== "") {
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else {
+                submit.disabled = true
+                e.target.classList.add('och-input-incorrect')
+            }
+        }
+        emailInput.onchange = e => {
+            if (checkbox.checked && nombreInput.value !== "" && IsEmailValid(emailInput.value) && asuntoInput.value !== "") {
+                submit.disabled = false
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else if (IsEmailValid(emailInput.value)) {
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else {
+                submit.disabled = true
+                e.target.classList.add('och-input-incorrect')
+            }
+        }
+        asuntoInput.onchange = e => {
+            if (checkbox.checked && nombreInput.value !== "" && IsEmailValid(emailInput.value) && asuntoInput.value !== "") {
+                submit.disabled = false
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else if (asuntoInput.value !== "") {
+                e.target.classList.remove('och-input-incorrect')
+            }
+            else {
+                submit.disabled = true
+                e.target.classList.add('och-input-incorrect')
+            }
+        }
+    }
+}
+ConfigForms()

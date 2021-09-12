@@ -68,16 +68,24 @@
             margin-bottom: 2.5rem;
         }
 
-        li:not(:last-child) {
-            margin-bottom: 1.25rem;
+        ul {
+            li:not(:last-child) {
+                margin-bottom: 1.25rem;
+            }
+    
+            li {
+                font-size: 0.9375rem;
+                line-height: 24px;
+                font-family: 'Open Sans';
+                font-weight: 400;
+            }
+
+            img {
+                display: none;
+            }
         }
 
-        li {
-            font-size: 0.9375rem;
-            line-height: 24px;
-            font-family: 'Open Sans';
-            font-weight: 400;
-        }
+        
     }
 }
 
@@ -143,12 +151,20 @@
             .och-description { grid-area: desc !important; }
             ul {
                 grid-area: list;
+                display: grid;
+                grid-template-columns: 1fr auto;
+                column-gap: 5rem;
 
                 li {
                     font-size: 1.3125rem;
                     line-height: 34px;
                     font-family: 'Open Sans';
                     font-weight: 400;
+                }
+
+                img {
+                    margin-top: .5rem;
+                    display: block;
                 }
             }
         }

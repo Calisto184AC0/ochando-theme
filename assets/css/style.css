@@ -77,7 +77,7 @@ input, button, textarea, select {
   --och-padding-top-header: 2.75rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   :root {
     --och-lateral-margin: 8.875rem;
   }
@@ -272,13 +272,13 @@ input, button, textarea, select {
 }
 
 .och-header-menu {
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 36px;
   font-family: Libre Baskerville;
   letter-spacing: -0.025rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-title {
     font-size: 5rem;
     line-height: 90px;
@@ -410,9 +410,8 @@ input, button, textarea, select {
 #och-blob-4 {
   width: 428.67px;
   height: auto;
-  top: 1482px;
+  top: 1000px;
   left: -221px;
-  transform: rotateZ(-130deg);
 }
 
 #och-blob-5 {
@@ -457,7 +456,7 @@ input, button, textarea, select {
   left: -150px;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   #och-blob-1 {
     display: block;
   }
@@ -526,6 +525,13 @@ input, button, textarea, select {
   align-items: center;
   border-radius: 50rem;
   color: var(--och-black);
+}
+.och-btn:disabled {
+  opacity: 0.3;
+}
+.och-btn:disabled:hover {
+  background-color: transparent !important;
+  border: 1px solid var(--och-gray) !important;
 }
 .och-btn:hover {
   cursor: pointer;
@@ -604,7 +610,7 @@ input, button, textarea, select {
   margin-bottom: 3.25rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-index-programas .och-card {
     display: grid;
     grid-template-rows: auto auto 1fr;
@@ -698,17 +704,20 @@ input, button, textarea, select {
 .och-list-extended-container .och-list-extended > .och-description {
   margin-bottom: 2.5rem;
 }
-.och-list-extended-container .och-list-extended li:not(:last-child) {
+.och-list-extended-container .och-list-extended ul li:not(:last-child) {
   margin-bottom: 1.25rem;
 }
-.och-list-extended-container .och-list-extended li {
+.och-list-extended-container .och-list-extended ul li {
   font-size: 0.9375rem;
   line-height: 24px;
   font-family: "Open Sans";
   font-weight: 400;
 }
+.och-list-extended-container .och-list-extended ul img {
+  display: none;
+}
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-list-container {
     display: grid;
     column-gap: var(--och-column-gap);
@@ -782,12 +791,19 @@ input, button, textarea, select {
   }
   .och-list-extended-container .och-list-extended ul {
     grid-area: list;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 5rem;
   }
   .och-list-extended-container .och-list-extended ul li {
     font-size: 1.3125rem;
     line-height: 34px;
     font-family: "Open Sans";
     font-weight: 400;
+  }
+  .och-list-extended-container .och-list-extended ul img {
+    margin-top: 0.5rem;
+    display: block;
   }
 }
 .och-img {
@@ -800,19 +816,22 @@ input, button, textarea, select {
   display: grid;
   column-gap: var(--och-column-gap);
   justify-content: stretch;
+  align-items: stretch;
   grid-template-areas: "title1 title1 title1 title1" "newsle newsle newsle newsle" "title2 title2 title2 title2" "contac contac contac contac" "links  links  links  links";
 }
 .och-footer .och-section-title:nth-of-type(1) {
   grid-area: title1;
+  margin-bottom: 3.75rem;
 }
 .och-footer .och-section-title:nth-of-type(2) {
   grid-area: title2;
   margin-top: 6.25rem;
+  margin-bottom: 3.75rem;
 }
-.och-footer .och-form-newsletter {
+.och-footer .wpcf7:nth-of-type(1) {
   grid-area: newsle;
 }
-.och-footer .och-form-contacto {
+.och-footer .wpcf7:nth-of-type(2) {
   grid-area: contac;
 }
 .och-footer .och-footer-links {
@@ -837,7 +856,7 @@ input, button, textarea, select {
   padding-right: 0.4rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-footer {
     grid-template-areas: "title1 title1 title1 title1 title1 title1 title2 title2 title2 title2 title2 title2" "newsle newsle newsle newsle newsle .      contac contac contac contac contac contac" "links  links  links  links  links  links  links  links  links  links  links  links";
   }
@@ -859,9 +878,9 @@ input, button, textarea, select {
 }
 .och-form {
   padding-top: 3.125rem;
+  padding-right: 1.875rem;
   border-top: 1px solid var(--och-gray);
   border-right: 1px solid var(--och-gray);
-  margin-top: 3.75rem;
   position: relative;
   display: grid;
   column-gap: var(--och-column-gap);
@@ -869,8 +888,14 @@ input, button, textarea, select {
   align-items: flex-start;
   justify-content: stretch;
 }
-.och-form > *:not(:last-child) {
-  margin-right: 1.875rem;
+.och-form .wpcf7-response-output {
+  display: none !important;
+}
+.och-form .och-input {
+  width: 100%;
+}
+.och-form .och-input-incorrect {
+  outline: 2px solid #ff6060;
 }
 .och-form .och-form-title {
   grid-area: title;
@@ -879,6 +904,12 @@ input, button, textarea, select {
 .och-form .och-form-description {
   grid-area: descr;
   margin-top: 1.5rem;
+}
+.och-form .och-form-description .wpcf7-list-item {
+  margin: 0 0.7rem 0 0 !important;
+}
+.och-form .och-form-description .wpcf7-list-item input {
+  margin: 0;
 }
 .och-form input.och-input:nth-of-type(1) {
   grid-area: inpt1;
@@ -916,6 +947,7 @@ input, button, textarea, select {
 }
 
 .och-form-newsletter {
+  height: 100%;
   grid-template-rows: auto auto auto auto auto 1fr;
   grid-template-areas: "title title title title" "inpt1 inpt1 inpt1 inpt1" "inpt2 inpt2 inpt2 inpt2" "inpt3 inpt3 inpt3 inpt3" "descr descr descr descr" "btn   btn   btn   .";
 }
@@ -924,7 +956,7 @@ input, button, textarea, select {
   grid-template-areas: "title title title title" "inpt1 inpt1 inpt1 inpt1" "inpt2 inpt2 inpt2 inpt2" "inpt3 inpt3 inpt3 inpt3" "inpt4 inpt4 inpt4 inpt4" "descr descr descr descr" "btn   btn   btn   .";
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-form > * {
     margin-right: 0;
   }
@@ -968,7 +1000,6 @@ input, button, textarea, select {
 .och-header .och-nav {
   height: 100vh;
   display: grid;
-  column-gap: var(--och-column-gap);
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas: "bg menu menu menu";
   position: absolute;
@@ -981,7 +1012,7 @@ input, button, textarea, select {
 }
 .och-header .och-nav .och-header-menu {
   grid-area: menu;
-  padding-top: 9.375rem;
+  padding-top: 6rem;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -995,15 +1026,15 @@ input, button, textarea, select {
 }
 .och-header .och-nav .och-header-menu a {
   display: inline-block;
-  padding-bottom: 1.25rem;
+  padding-bottom: 0.25rem;
 }
 .och-header .och-nav .och-header-menu ul {
   margin-left: 2rem;
   max-width: 85%;
 }
 .och-header .och-nav .och-header-menu ul li {
-  font-size: 1.25rem;
-  line-height: 32px;
+  font-size: 0.9rem;
+  line-height: 26px;
 }
 .och-header .och-nav::after {
   content: "";
@@ -1016,10 +1047,17 @@ input, button, textarea, select {
   background-color: var(--och-red);
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-header .och-nav {
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas: ". . . . . . . . bg menu menu menu";
+  }
+  .och-header .och-nav .och-header-menu ul li {
+    font-size: 1.25rem;
+    line-height: 36px;
+  }
+  .och-header .och-nav .och-header-menu ul li a {
+    padding-bottom: 1.25rem;
   }
   .och-header .och-btn {
     display: flex;
@@ -1068,7 +1106,7 @@ input, button, textarea, select {
   grid-area: card3;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-container .och-section {
     grid-template-columns: repeat(12, 1fr);
   }
@@ -1096,9 +1134,9 @@ input, button, textarea, select {
   margin-top: 2.5rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-index-init {
-    grid-template-areas: "title title title title title title title title . . . ." "img img img img img . descr descr descr descr descr descr" "img img img img img . btn btn . . . .";
+    grid-template-areas: "title title title title title title title title title title title title" "img img img img img . descr descr descr descr descr descr" "img img img img img . btn btn . . . .";
   }
   .och-section-index-init .och-title {
     height: 70vh;
@@ -1127,11 +1165,12 @@ input, button, textarea, select {
   margin-bottom: 5.3125rem;
 }
 .och-section-index-metodo .och-description:nth-of-type(2) {
-  margin-bottom: 3.75rem;
+  margin-bottom: 3.75rem !important;
   grid-area: descr2;
   font-family: "Libre Baskerville";
   letter-spacing: -0.025rem;
-  font-size: 1rem;
+  font-size: 1.5rem !important;
+  line-height: 36px;
 }
 .och-section-index-metodo .och-btn {
   margin-bottom: 6.5rem !important;
@@ -1140,9 +1179,9 @@ input, button, textarea, select {
   background-color: var(--och-beige);
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-index-metodo {
-    grid-template-areas: "title title title title title title descr descr descr descr descr descr" "list list list list list list list list list list list list" ". . . . . . descr2 descr2 descr2 descr2 descr2 descr2" ". . . . . . btn btn . . . .";
+    grid-template-areas: "title title title title title title descr descr descr descr descr descr" "list list list list list list list list list list list list" "descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2" ". . . . . btn btn . . . . .";
   }
   .och-section-index-metodo .och-description {
     margin-bottom: 3.125rem;
@@ -1151,7 +1190,8 @@ input, button, textarea, select {
     margin-bottom: 13.5rem;
   }
   .och-section-index-metodo .och-description:nth-of-type(2) {
-    font-size: 1.5rem;
+    font-size: 2.5rem !important;
+    line-height: 54px;
   }
 }
 /* #endregion Metodo */
@@ -1162,7 +1202,7 @@ input, button, textarea, select {
   row-gap: 3.125rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-index-programas {
     align-items: stretch !important;
     grid-template-areas: "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
@@ -1184,7 +1224,7 @@ input, button, textarea, select {
   margin-top: 4.75rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-index-articulos {
     grid-template-areas: "title title title title title title title . . . . ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3" "btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn";
   }
@@ -1218,15 +1258,16 @@ input, button, textarea, select {
   margin-top: 1.875rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-quiensoy-init {
-    grid-template-areas: "title title title title title title . . . . . ." "img img img descr descr descr descr descr descr descr descr descr";
+    grid-template-areas: "title title title title title title title title title title title title" "img img img descr descr descr descr descr descr descr descr descr";
   }
   .och-section-quiensoy-init .och-title {
     height: 70vh;
   }
   .och-section-quiensoy-init .och-img {
-    margin-top: 0;
+    padding-top: 0;
+    margin-top: 2.2rem;
   }
 }
 /* #endregion Index */
@@ -1241,7 +1282,7 @@ input, button, textarea, select {
   margin-bottom: 17.4375rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-quiensoy-info {
     grid-template-areas: "title title title title title title title title title title title title" "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3";
   }
@@ -1269,7 +1310,7 @@ input, button, textarea, select {
   background-color: var(--och-green);
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-quiensoy-more {
     grid-template-areas: "title title title title title title . . . . . ." "descr descr descr descr descr descr descr descr descr descr descr descr";
   }
@@ -1296,9 +1337,9 @@ input, button, textarea, select {
   padding-bottom: 3.125rem;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-programas-init {
-    grid-template-areas: "title title title title title title title title title title title .";
+    grid-template-areas: "title title title title title title title title title title title title";
   }
   .och-section-programas-init .och-title {
     height: 70vh;
@@ -1310,7 +1351,7 @@ input, button, textarea, select {
   grid-template-areas: "list list list list";
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-programas-pasos {
     grid-template-areas: "list list list list list list list list list list list list";
   }
@@ -1338,7 +1379,7 @@ input, button, textarea, select {
   grid-area: descr3;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-programas-text {
     grid-template-areas: ". . . descr descr descr descr descr descr descr descr descr" ". . . descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2" ". . . descr3 descr3 descr3 descr3 descr3 descr3 descr3 descr3 descr3";
   }
@@ -1361,7 +1402,7 @@ input, button, textarea, select {
   grid-area: exten;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-programas-extended-pasos {
     grid-template-areas: "title title title title title title title title title title title title" "exten exten exten exten exten exten exten exten exten exten exten exten";
   }
@@ -1382,10 +1423,11 @@ input, button, textarea, select {
   margin-bottom: 4.25rem;
 }
 .och-section-programas-procedimiento .och-btn {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 1.875rem;
   letter-spacing: -0.025rem;
   font-family: "Libre Baskerville";
+  text-align: center;
 }
 .och-section-programas-procedimiento .och-btn:nth-of-type(1) {
   grid-area: s1;
@@ -1409,7 +1451,7 @@ input, button, textarea, select {
   grid-area: s7;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-programas-procedimiento {
     grid-template-areas: "title title title title title title title title title title title title" ". . . descr descr descr descr descr descr descr descr ." ". . . descr2 descr2 descr2 descr2 descr2 descr2 descr2 descr2 ." ". s1 s1 s1 s1 s1 s1 s1 s1 s1 s1 ." ". s2 s2 s2 s2 s2 s2 s2 s2 s2 s2 ." ". s3 s3 s3 s3 s3 s3 s3 s3 s3 s3 ." ". s4 s4 s4 s4 s4 s4 s4 s4 s4 s4 ." ". s5 s5 s5 s5 s5 s5 s5 s5 s5 s5 ." ". s6 s6 s6 s6 s6 s6 s6 s6 s6 s6 ." ". s7 s7 s7 s7 s7 s7 s7 s7 s7 s7 .";
   }
@@ -1419,6 +1461,9 @@ input, button, textarea, select {
   .och-section-programas-procedimiento .och-description:nth-of-type(2) {
     margin-top: 4.25rem;
     margin-bottom: 6.25rem;
+  }
+  .och-section-programas-procedimiento .och-btn {
+    font-size: 1.5rem;
   }
 }
 /* #endregion Metodologia */
@@ -1431,7 +1476,7 @@ input, button, textarea, select {
   line-height: 36px;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-programas-slogan {
     grid-template-areas: "title title title title title title title title title title title title";
   }
@@ -1467,7 +1512,7 @@ input, button, textarea, select {
   grid-area: auto !important;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-articulos-init {
     grid-template-rows: auto 1fr auto;
     grid-template-areas: "title title title title title title . . . . . ." "img img img img img img img img subtitle subtitle subtitle ." "img img img img img img img img descr descr descr descr";
@@ -1513,11 +1558,11 @@ input, button, textarea, select {
 .och-section-contacto-form {
   grid-template-areas: "form form form form";
 }
-.och-section-contacto-form .och-form {
+.och-section-contacto-form .wpcf7 {
   grid-area: form;
 }
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-contacto-init {
     grid-template-areas: "title title title title title title . . . . . .";
   }
@@ -1566,6 +1611,10 @@ input, button, textarea, select {
 .och-section-articulo-parrafo {
   grid-template-areas: "title title title title" "descr descr descr descr";
 }
+.och-section-articulo-parrafo .och-description a {
+  color: var(--och-black);
+  text-decoration: underline;
+}
 
 .och-section-articulo-img-full {
   grid-template-areas: "img img img img";
@@ -1583,8 +1632,12 @@ input, button, textarea, select {
 .och-section-articulo-cta .och-description {
   margin-bottom: 4rem;
 }
+.och-section-articulo-cta .och-description a {
+  color: var(--och-black);
+  text-decoration: underline;
+}
 
-@media only screen and (min-width: 1023px) {
+@media (min-width: 1023px) and (min-height: 600px) {
   .och-section-articulo-relacionados {
     grid-template-areas: "title title title title title title title . . . . ." "card1 card1 card1 card1 card2 card2 card2 card2 card3 card3 card3 card3" "btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn   btn";
   }
@@ -1597,7 +1650,7 @@ input, button, textarea, select {
   }
 
   .och-section-articulo-title {
-    grid-template-areas: "title title title title title title . . . . . .";
+    grid-template-areas: "title title title title title title title title title title title title";
   }
   .och-section-articulo-title .och-title {
     height: 70vh;
@@ -1622,5 +1675,24 @@ input, button, textarea, select {
   }
 }
 /* #endregion ---- Articulo ---- */
+.och-section-default {
+  display: block !important;
+  padding: 4rem 0;
+}
+.och-section-default > * {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1023px) and (min-height: 600px) {
+  .och-section-default {
+    padding: 6rem 15.625rem;
+  }
+}
+@media (min-width: 1023px) and (max-width: 1400px) {
+  .och-section-programas-init .och-title, .och-section-index-init .och-title, .och-section-articulos-init .och-title, .och-section-quiensoy-init .och-title, .och-section-articulo-title .och-title {
+    font-size: 3.5rem;
+    line-height: 75px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

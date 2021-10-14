@@ -26,6 +26,11 @@
         </nav>
 
     </footer>
+
+    <div class="och-cookies och-hidden" id="consent-popup">
+        <p>Utilizamos cookies para optimizar nuestro sitio web. <a href="https://estherochando.com/politica-de-cookies/">Leer más</a></p>
+        <span id="accept">Aceptar y cerrar</span>
+    </div>
     <?php wp_footer(); ?>
 </body>
 </html>

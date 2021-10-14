@@ -806,6 +806,39 @@ input, button, textarea, select {
     display: block;
   }
 }
+.och-cookies {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+  padding: 1rem;
+  background-color: var(--och-black);
+  color: white;
+  transition: opacity 1s ease;
+}
+.och-cookies p {
+  margin-bottom: 0.8rem;
+}
+.och-cookies a {
+  font-weight: bold;
+  color: var(--och-yellow);
+  text-decoration: underline;
+}
+.och-cookies span {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.och-hidden {
+  display: none;
+}
+
+@media (min-width: 1023px) and (min-height: 600px) {
+  .och-cookies {
+    width: 300px;
+  }
+}
 .och-img {
   width: 100%;
   height: auto;

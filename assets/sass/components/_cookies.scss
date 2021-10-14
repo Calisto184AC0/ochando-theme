@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.och-cookies {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    padding: 1rem;
+    background-color: var(--och-black);
+    color: white;
+    transition: opacity 1s ease;
+
+    p {
+        margin-bottom: .8rem;
+    }
+
+    a {
+        font-weight: bold;
+        color: var(--och-yellow);
+        text-decoration: underline;
+    }
+
+    span {
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.och-hidden {
+    display: none;
+}
+
+@include desktop {
+    .och-cookies {
+        width: 300px;
+    }
+}

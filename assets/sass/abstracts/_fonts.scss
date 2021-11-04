@@ -26,63 +26,63 @@ $och-letter-spacing: -0.025rem;
 $och-typo: (
     '': (
         title: (
-            font-size: (2.5rem, 5rem),
-            line-height: (48px, 90px),
+            font-size: (2.5rem, 4.167vw),
+            line-height: (48px, 4.688vw),
             font-family: "Libre Baskerville",
             font-weight: 400,
             letter-spacing: $och-letter-spacing
         ),
         section-title: (
-            font-size: (2rem, 3rem),
-            line-height: (46px, 60px),
+            font-size: (2rem, 2.500vw),
+            line-height: (46px, 3.125vw),
             font-family: "Libre Baskerville",
             font-weight: 400,
             letter-spacing: $och-letter-spacing
         ),
         description: (
-            font-size: (.9375rem, 1.3125rem),
-            line-height: (24px, 34px),
+            font-size: (.9375rem, 1.094vw),
+            line-height: (24px, 1.771vw),
             font-family: "Open Sans",
             font-weight: 400
         ),
         link: (
-            font-size: (.9375rem, 1.0625rem),
-            line-height: (24px, 27px)
+            font-size: (.9375rem, 1.094vw),
+            line-height: (24px, 1.406vw)
         )
     ),
     card: (
         title: (
-            font-size: (1.5rem, 2rem),
-            line-height: (36px, 46px),
+            font-size: (1.5rem, 1.667vw),
+            line-height: (36px, 2.396vw),
             font-family: "Libre Baskerville",
             font-weight: 400,
             letter-spacing: $och-letter-spacing
         ),
         description: (
-            font-size: (.9375rem, 1.0625rem),
-            line-height: (24px, 27px)
+            font-size: (.9375rem, 0.885vw),
+            line-height: (24px, 1.406vw)
         )
     ),
     list: (
         title: (
-            font-size: (1.75rem, 1.75rem),
-            line-height: (36px, 36px),
+            font-size: (1.75rem, 1.458vw),
+            line-height: (36px, 1.875vw),
             font-family: "Open Sans Condensed",
             font-weight: 700,
             letter-spacing: $och-letter-spacing,
             text-align: center
         ),
         enum: (
-            font-size: (3rem, 3rem),
-            line-height: (36px, 36px),
+            font-size: (3rem, 2.500vw),
+            line-height: (36px, 1.875vw),
             font-family: "Open Sans Condensed",
             font-weight: 700,
             letter-spacing: $och-letter-spacing,
             text-align: center
         ),
         description: (
-            font-size: (1.125rem, 1.125rem),
-            line-height: (28px, 28px),
+            font-size: (1.125rem, 0.938vw),
+            line-height: (28px, 1.458vw),
             font-family: "Libre Baskerville",
             font-style: italic,
             color: var(--och-gray),
@@ -91,15 +91,15 @@ $och-typo: (
     ),
     form: (
         title: (
-            font-size: (1rem, 1.5rem),
-            line-height: (25px, 36px),
+            font-size: (1rem, 0.938vw),
+            line-height: (25px, 1.875vw),
             font-family: "Libre Baskerville",
             font-weight: 400,
             letter-spacing: $och-letter-spacing
         ),
         description: (
-            font-size: (.875rem, .9375rem),
-            line-height: (19px, 21px),
+            font-size: (.875rem, 0.781vw),
+            line-height: (19px, 1.094vw),
             color: var(--och-gray),
             font-family: "Open Sans",
             font-weight: 400
@@ -107,16 +107,16 @@ $och-typo: (
     ),
     header: (
         title: (
-            font-size: (1.875rem, 1.875rem),
-            line-height: (36px, 36px),
+            font-size: (1.875rem, 1.563vw),
+            line-height: (36px, 1.875vw),
             font-family: "Open Sans Condensed",
             font-weight: 700,
             letter-spacing: $och-letter-spacing,
             color: var(--och-black)
         ),
         menu: (
-            font-size: (1rem, 1.5rem),
-            line-height: (36px, 46px),
+            font-size: (1rem, 1.250vw),
+            line-height: (36px, 2.396vw),
             font-family: "Libre Baskerville",
             letter-spacing: $och-letter-spacing
         )

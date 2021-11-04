@@ -22,7 +22,7 @@
     </head>
 <body>
     <header class="och-header">
-        <a href="<?php echo home_url(); ?>" class="och-header-title">ESTHER OCHANDO</a>
+        <a href="<?php echo home_url(); ?>" class="och-header-title och-logo">ESTHER OCHANDO</a>
         <div class="och-header-links-container">
             <a href="<?php echo get_permalink( get_page_by_path( 'contacto' ) ); ?>" class="och-btn">Contacta conmigo</a>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/icon/menu-icon.svg" alt="" class="och-header-menu-icon">

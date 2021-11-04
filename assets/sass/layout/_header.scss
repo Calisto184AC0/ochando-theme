@@ -11,6 +11,10 @@
     left: var(--och-lateral-margin);
     right: var(--och-lateral-margin);
 
+    .och-logo {
+        font-size: 1.875rem !important;
+    }
+
     .och-header-links-container {
         display: flex;
         align-items: center;

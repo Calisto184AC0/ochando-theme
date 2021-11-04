@@ -280,49 +280,49 @@ input, button, textarea, select {
 
 @media (min-width: 1023px) and (min-height: 600px) {
   .och-title {
-    font-size: 5rem;
-    line-height: 90px;
+    font-size: 4.167vw;
+    line-height: 4.688vw;
     font-family: Libre Baskerville;
     font-weight: 400;
     letter-spacing: -0.025rem;
   }
 
   .och-section-title {
-    font-size: 3rem;
-    line-height: 60px;
+    font-size: 2.5vw;
+    line-height: 3.125vw;
     font-family: Libre Baskerville;
     font-weight: 400;
     letter-spacing: -0.025rem;
   }
 
   .och-description {
-    font-size: 1.3125rem;
-    line-height: 34px;
+    font-size: 1.094vw;
+    line-height: 1.771vw;
     font-family: Open Sans;
     font-weight: 400;
   }
 
   .och-link {
-    font-size: 1.0625rem;
-    line-height: 27px;
+    font-size: 1.094vw;
+    line-height: 1.406vw;
   }
 
   .och-card-title {
-    font-size: 2rem;
-    line-height: 46px;
+    font-size: 1.667vw;
+    line-height: 2.396vw;
     font-family: Libre Baskerville;
     font-weight: 400;
     letter-spacing: -0.025rem;
   }
 
   .och-card-description {
-    font-size: 1.0625rem;
-    line-height: 27px;
+    font-size: 0.885vw;
+    line-height: 1.406vw;
   }
 
   .och-list-title {
-    font-size: 1.75rem;
-    line-height: 36px;
+    font-size: 1.458vw;
+    line-height: 1.875vw;
     font-family: Open Sans Condensed;
     font-weight: 700;
     letter-spacing: -0.025rem;
@@ -330,8 +330,8 @@ input, button, textarea, select {
   }
 
   .och-list-enum {
-    font-size: 3rem;
-    line-height: 36px;
+    font-size: 2.5vw;
+    line-height: 1.875vw;
     font-family: Open Sans Condensed;
     font-weight: 700;
     letter-spacing: -0.025rem;
@@ -339,8 +339,8 @@ input, button, textarea, select {
   }
 
   .och-list-description {
-    font-size: 1.125rem;
-    line-height: 28px;
+    font-size: 0.938vw;
+    line-height: 1.458vw;
     font-family: Libre Baskerville;
     font-style: italic;
     color: var(--och-gray);
@@ -348,24 +348,24 @@ input, button, textarea, select {
   }
 
   .och-form-title {
-    font-size: 1.5rem;
-    line-height: 36px;
+    font-size: 0.938vw;
+    line-height: 1.875vw;
     font-family: Libre Baskerville;
     font-weight: 400;
     letter-spacing: -0.025rem;
   }
 
   .och-form-description {
-    font-size: 0.9375rem;
-    line-height: 21px;
+    font-size: 0.781vw;
+    line-height: 1.094vw;
     color: var(--och-gray);
     font-family: Open Sans;
     font-weight: 400;
   }
 
   .och-header-title {
-    font-size: 1.875rem;
-    line-height: 36px;
+    font-size: 1.563vw;
+    line-height: 1.875vw;
     font-family: Open Sans Condensed;
     font-weight: 700;
     letter-spacing: -0.025rem;
@@ -373,8 +373,8 @@ input, button, textarea, select {
   }
 
   .och-header-menu {
-    font-size: 1.5rem;
-    line-height: 46px;
+    font-size: 1.25vw;
+    line-height: 2.396vw;
     font-family: Libre Baskerville;
     letter-spacing: -0.025rem;
   }
@@ -396,14 +396,14 @@ input, button, textarea, select {
 #och-blob-2 {
   width: 558.27px;
   height: auto;
-  top: 214px;
+  top: 400px;
   left: -320px;
 }
 
 #och-blob-3 {
   width: 511.51px;
   height: auto;
-  top: 117px;
+  top: 100px;
   right: -320px;
 }
 
@@ -1016,6 +1016,9 @@ input, button, textarea, select {
   top: var(--och-padding-top-header);
   left: var(--och-lateral-margin);
   right: var(--och-lateral-margin);
+}
+.och-header .och-logo {
+  font-size: 1.875rem !important;
 }
 .och-header .och-header-links-container {
   display: flex;
